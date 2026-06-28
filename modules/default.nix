@@ -1,0 +1,29 @@
+{ ... }:
+{
+	imports =
+	[
+		./ddcci
+		./bluetooth
+		./platform-theme
+		./user
+		./hyprland-de
+		./waybar
+		./wofi
+		./ssh
+		./git
+		./bash
+		./vscodium
+		./brave
+		./vesktop
+		./godot
+		./r2modman
+		./backups
+		./fastfetch
+		./kde-partition-manager
+		./kitty
+		./easyeffects
+		./iwd
+		./locale
+		./dolphin
+	];
+}
