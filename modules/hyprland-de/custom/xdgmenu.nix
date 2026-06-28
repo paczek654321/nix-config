@@ -1,0 +1,18 @@
+{ config, lib, pkgs, ... }:
+{
+
+config = lib.mkIf config.my.hyprland-de.enable
+{
+	environment.etc."xdg/menus/applications.menu".text =
+	''
+		<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN" "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+		<Menu>
+			<Name>Applications</Name>
+			<DefaultAppDirs/>
+			<DefaultDirectoryDirs/>
+			<DefaultMergeDirs/>
+		</Menu>
+	'';
+};
+
+}
