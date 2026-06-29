@@ -43,6 +43,14 @@ in
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 
+	nixpkgs.overlays = 
+	[
+		(final: prev: 
+		{
+			linux-firmware = inputs.hephaestus-firmware.legacyPackages.${prev.stdenv.hostPlatform.system}.linux-firmware;
+		})
+	];
+
 	my.ddcci =
 	{
 		enable = true;
