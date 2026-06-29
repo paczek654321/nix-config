@@ -9,7 +9,7 @@ config = lib.mkIf config.my.hyprland-de.enable
 		xdgOpenUsePortal = true;
 		config =
 		{
-			Hyprland =
+			hyprland =
 			{
 				default =
 				[
@@ -18,10 +18,6 @@ config = lib.mkIf config.my.hyprland-de.enable
 					"gtk"
 				];
 				"org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
-			};
-			common =
-			{
-				default = [ "kde" ];
 			};
 		};
 		extraPortals = with pkgs;
