@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "firmware-downgrade": {
-      "locked": {
-        "lastModified": 1773125890,
-        "narHash": "sha256-Kob9356sCwqTPjNDmcsS2IymE1EFEhll/+RKXcMrZz4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "78173555c5d16bee8ab97ce9ef1d257d5657b442",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "78173555c5d16bee8ab97ce9ef1d257d5657b442",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -29,6 +13,22 @@
       "original": {
         "owner": "edolstra",
         "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "hephaestus-firmware": {
+      "locked": {
+        "lastModified": 1773125890,
+        "narHash": "sha256-Kob9356sCwqTPjNDmcsS2IymE1EFEhll/+RKXcMrZz4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "78173555c5d16bee8ab97ce9ef1d257d5657b442",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "78173555c5d16bee8ab97ce9ef1d257d5657b442",
         "type": "github"
       }
     },
@@ -91,7 +91,7 @@
     },
     "root": {
       "inputs": {
-        "firmware-downgrade": "firmware-downgrade",
+        "hephaestus-firmware": "hephaestus-firmware",
         "home-manager": "home-manager",
         "ilya-fedin": "ilya-fedin",
         "nixpkgs": "nixpkgs"

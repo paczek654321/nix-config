@@ -5,7 +5,6 @@ nixpkgs.overlays =
 [
 	(final: prev: 
 	{
-		linux-firmware = inputs.firmware-downgrade.legacyPackages.${prev.stdenv.hostPlatform.system}.linux-firmware;
 		
 		qt6Packages = prev.qt6Packages // {
 			qt6ct = inputs.ilya-fedin.packages.${prev.stdenv.hostPlatform.system}.qt6ct;
