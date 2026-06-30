@@ -32,6 +32,17 @@ outputs = { self, nixpkgs, ... }@inputs:
 			./hosts/Hephaestus.nix
 		];
 	};
+	nixosConfigurations.Loviatar = nixpkgs.lib.nixosSystem
+	{
+		system = "x86_64-linux";
+		specialArgs = {inherit inputs; };
+		modules =
+		[
+			./packages
+			./modules
+			./hosts/Loviatar.nix
+		];
+	};
 };
 
 }
