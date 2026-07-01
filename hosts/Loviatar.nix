@@ -18,28 +18,6 @@ in
 		cpu.intel.updateMicrocode = true;
 	};
 
-	fileSystems =
-	{
-		"/" =
-		{
-			device = "/dev/disk/by-label/root";
-			fsType = "ext4";
-		};
-
-		"/boot" =
-		{
-			device = "/dev/disk/by-label/EFI";
-			fsType = "vfat";
-			options = [ "fmask=0077" "dmask=0077" ];
-		};
-
-		"/data" =
-		{
-			device = "/dev/disk/by-label/data";
-			fsType = "btrfs";
-		};
-	};
-
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 
 	my.ddcci =

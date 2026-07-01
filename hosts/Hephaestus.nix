@@ -19,28 +19,6 @@ in
 		cpu.amd.updateMicrocode = true;
 	};
 
-	fileSystems =
-	{
-		"/" =
-		{
-			device = "/dev/disk/by-id/nvme-Lexar_SSD_NM790_2TB_PDV7634101639P220J_1-part2";
-			fsType = "ext4";
-		};
-
-		"/boot" =
-		{
-			device = "/dev/disk/by-id/nvme-Lexar_SSD_NM790_2TB_PDV7634101639P220J_1-part1";
-			fsType = "vfat";
-			options = [ "fmask=0077" "dmask=0077" ];
-		};
-
-		"/data" =
-		{
-			device = "/dev/disk/by-id/nvme-Lexar_SSD_NM790_2TB_PDV7634101639P220J_1-part3";
-			fsType = "btrfs";
-		};
-	};
-
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 
 	nixpkgs.overlays = 
