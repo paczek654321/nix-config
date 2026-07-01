@@ -2,6 +2,7 @@
 let
 	concatMonitorsMap = f: builtins.concatMap (i: builtins.genList (f i) monitorCount) (builtins.genList(i: i) workspaceCount);
 	workspaceIdx = w: m: toString (monitorCount*w + m + 1);
+	idx2key = i: toString (pkgs.lib.trivial.mod (i + 1) 10);
 	
 	workspaceCount = 10;
 	monitorCount = builtins.length monitors;
@@ -28,13 +29,13 @@ config = lib.mkIf config.my.hyprland-de.enable
 		
 			workspace = concatMonitorsMap (w: m: "${workspaceIdx w m}, monitor:${builtins.elemAt monitors m}");
 		
-			bindns = concatMonitorsMap (w: m: "$workspaceMod, Tab&${toString (w + 1)}, workspace, ${workspaceIdx w m}");
+			bindns = concatMonitorsMap (w: m: "$workspaceMod, Tab&${idx2key w}, workspace, ${workspaceIdx w m}");
 
 			bindn = concatMonitorsMap (w: m:
 				if m == 0 then
-					"$workspaceMoveMod, ${toString (w + 1)}, movetoworkspace, ${workspaceIdx w m}"
+					"$workspaceMoveMod, ${idx2key w}, movetoworkspace, ${workspaceIdx w m}"
 				else
-					"$workspaceMoveMod, ${toString (w + 1)}, workspace, ${workspaceIdx w m}"
+					"$workspaceMoveMod, ${idx2key w}, workspace, ${workspaceIdx w m}"
 			);
 
 			bind = builtins.genList (m:
@@ -45,7 +46,7 @@ config = lib.mkIf config.my.hyprland-de.enable
 			acc //
 			{
 				"monitor_${toString (m + 1)}".settings.bindns = builtins.genList (w:
-					"$workspaceMod, Tab&${toString (w + 1)}, workspace, ${workspaceIdx w m}"
+					"$workspaceMod, Tab&${idx2key w}, workspace, ${workspaceIdx w m}"
 				) workspaceCount;
 			}
 		) {} (builtins.genList (i: i) monitorCount);
