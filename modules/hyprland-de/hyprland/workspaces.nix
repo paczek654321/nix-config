@@ -79,6 +79,20 @@ config = lib.mkIf config.my.hyprland-de.enable
 			}
 		) {} (builtins.genList (i: i) monitorCount);
 	};
+
+	my.waybar.custom = lib.mkIf config.my.waybar.enable
+	{
+		"hyprland/workspaces" =
+		{
+			active-only = false;
+			format = "{icon}";
+			format-icons = builtins.listToAttrs (lib.concatMap (m: builtins.genList (w:
+			{
+				name = "${workspaceIdx w m}";
+				value = builtins.elemAt [ "󰲡" "󰲣" "󰲥" "󰲧" "󰲩" "󰲫" "󰲭" "󰲯" "󰲱" "󰿭" ] w;
+			}) workspaceCount) (builtins.genList (i: i) monitorCount));
+		};
+	};
 };
 
 }
