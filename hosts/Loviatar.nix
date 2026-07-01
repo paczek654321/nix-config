@@ -22,20 +22,20 @@ in
 	{
 		"/" =
 		{
-			device = "/dev/disk/by-id/nvme-Lexar_SSD_NM620_1TB_NJ7388R000905P1012-part2";
+			device = "/dev/disk/by-label/root";
 			fsType = "ext4";
 		};
 
 		"/boot" =
 		{
-			device = "/dev/disk/by-id/nvme-Lexar_SSD_NM620_1TB_NJ7388R000905P1012-part1";
+			device = "/dev/disk/by-label/EFI";
 			fsType = "vfat";
 			options = [ "fmask=0077" "dmask=0077" ];
 		};
 
 		"/data" =
 		{
-			device = "/dev/disk/by-id/nvme-Lexar_SSD_NM620_1TB_NJ7388R000905P1012-part3";
+			device = "/dev/disk/by-label/data";
 			fsType = "btrfs";
 		};
 	};
