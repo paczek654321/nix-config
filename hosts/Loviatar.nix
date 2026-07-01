@@ -128,4 +128,20 @@ in
 			background = "242424";
 		};
 	};
+
+	my.vscodium =
+	{
+		enable = true;
+		settings =
+		{
+			editor =
+			{
+				tabSize = 4;
+				insertSpaces = false;
+				detectIndentation = false;
+			};
+			"[nix]".editor = config.my.vscodium.settings.editor;
+			workbench.colorTheme = "Sweet Dracula Monokai";
+		};
+	};
 }
