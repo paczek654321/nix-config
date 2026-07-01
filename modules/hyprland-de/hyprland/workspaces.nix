@@ -7,15 +7,43 @@ let
 	workspaceCount = 10;
 	monitorCount = builtins.length monitors;
 
-	monitors = config.my.hyprland-de.workspaces.monitors;
+	monitors = cfg.monitors;
+
+	workspaceSwitchPrefix = if cfg.workspaceSwitchPrefix != "" then "${cfg.workspaceSwitchPrefix}&" else "";
+
+	cfg = config.my.hyprland-de.workspaces;
 in
 {
 
-options.my.hyprland-de.workspaces.monitors = lib.mkOption
+options.my.hyprland-de.workspaces =
 {
-	type = lib.types.listOf lib.types.str;
-	default = [ ];
-	description = "Monitor names that workspaces should be created for";
+	monitors = lib.mkOption
+	{
+		type = lib.types.listOf lib.types.str;
+		default = [ ];
+		description = "Monitor names that workspaces should be created for";
+	};
+
+	workspaceMod = lib.mkOption
+	{
+		type = lib.types.str;
+		default = "ALT_L";
+		description = "Modifer key used for workspace operations";
+	};
+
+	workspaceMoveMod = lib.mkOption
+	{
+		type = lib.types.str;
+		default = "$workspaceMod SHIFT";
+		description = "Modifer key used when moving workspaces";
+	};
+
+	workspaceSwitchPrefix = lib.mkOption
+	{
+		type = lib.types.str;
+		default = "Tab";
+		description = "Prefix used when switching workspaces";
+	};
 };
 
 config = lib.mkIf config.my.hyprland-de.enable
@@ -24,12 +52,12 @@ config = lib.mkIf config.my.hyprland-de.enable
 	{
 		settings =
 		{
-			"$workspaceMod" = "ALT_L";
-			"$workspaceMoveMod" = "$workspaceMod SHIFT";
+			"$workspaceMod" = "${cfg.workspaceMod}";
+			"$workspaceMoveMod" = "${cfg.workspaceMoveMod}";
 		
 			workspace = concatMonitorsMap (w: m: "${workspaceIdx w m}, monitor:${builtins.elemAt monitors m}");
 		
-			bindns = concatMonitorsMap (w: m: "$workspaceMod, Tab&${idx2key w}, workspace, ${workspaceIdx w m}");
+			bindns = concatMonitorsMap (w: m: "$workspaceMod, ${workspaceSwitchPrefix}${idx2key w}, workspace, ${workspaceIdx w m}");
 
 			bindn = concatMonitorsMap (w: m:
 				if m == 0 then
@@ -46,7 +74,7 @@ config = lib.mkIf config.my.hyprland-de.enable
 			acc //
 			{
 				"monitor_${toString (m + 1)}".settings.bindns = builtins.genList (w:
-					"$workspaceMod, Tab&${idx2key w}, workspace, ${workspaceIdx w m}"
+					"$workspaceMod, ${workspaceSwitchPrefix}${idx2key w}, workspace, ${workspaceIdx w m}"
 				) workspaceCount;
 			}
 		) {} (builtins.genList (i: i) monitorCount);

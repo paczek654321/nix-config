@@ -92,10 +92,14 @@ in
 	my.hyprland-de =
 	{
 		enable = true;
-		workspaces.monitors =
-		[
-			"eDP-1"
-		];
+		workspaces =
+		{
+			monitors =
+			[
+				"eDP-1"
+			];
+			workspaceSwitchPrefix = "";
+		};
 		settings =
 		{
 			monitor =
