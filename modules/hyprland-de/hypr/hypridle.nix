@@ -30,7 +30,8 @@ config = lib.mkIf config.my.hyprland-de.enable
 					}
 					{
 						timeout = 200;
-						on-timeout = "bash -c 'while (ddcutil detect | grep \"VCP version\" | read); do ddcutil setvcp D6 05; done'";
+						on-timeout = "hyprctl dispatch dpms off; bash -c 'while (ddcutil detect | grep \"VCP version\" | read); do ddcutil setvcp D6 05; done'";
+    					on-resume = "hyprctl dispatch dpms on";
 					}
 				];
 			};
