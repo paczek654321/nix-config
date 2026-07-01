@@ -119,12 +119,12 @@ in
 
 		colorPalette =
 		{
-			ansiiPrimary = "165";
-			ansiiSecondary = "57";
-			ansiiTertiary = "111";
-			ansiiText = "15";
-			primaryAccent = "aa33ff";
-			secondaryAccent = "ff33aa";
+			ansiiPrimary = "118";
+			ansiiSecondary = "226";
+			ansiiTertiary = "28";
+			ansiiText = "18";
+			primaryAccent = "5AD950";
+			secondaryAccent = "f5f844";
 			background = "242424";
 		};
 	};
