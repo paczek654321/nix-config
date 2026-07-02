@@ -14,9 +14,30 @@ in
 			enable = true;
 			enable32Bit = true;
 		};
+		nvidia =
+		{
+			modesetting.enable = true;
+			powerManagement.enable = false;
+			powerManagement.finegrained = false;
+			open = false;
+			nvidiaSettings = true;
+
+			prime =
+			{
+				offload =
+				{
+					enable = true;
+					enableOffloadCmd = true;
+				};
+				intelBusId = "PCI:0:2:0";
+				nvidiaBusId = "PCI:1:0:0";
+			};
+		};
 		enableRedistributableFirmware = true;
 		cpu.intel.updateMicrocode = true;
 	};
+
+	services.xserver.videoDrivers = [ "modesetting" "nvidia"];
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 	
