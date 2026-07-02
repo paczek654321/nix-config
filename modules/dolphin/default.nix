@@ -19,6 +19,13 @@ config = lib.mkIf config.my.dolphin.enable
 			kdePackages.kservice
 		];
 	};
+
+	environment.systemPackages = with pkgs;
+	[
+		kdePackages.kio
+		kdePackages.kio-extras
+		kdePackages.kio-fuse
+	];
 };
 
 }
