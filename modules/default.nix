@@ -25,5 +25,6 @@
 		./iwd
 		./locale
 		./dolphin
+		./vsftpd
 	];
 }
