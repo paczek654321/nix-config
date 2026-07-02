@@ -58,6 +58,8 @@ in
 		username = "paczek";
 	};
 
+	my.vsftpd.enable = true;
+
 	my.bash =
 	{
 		enable = true;
