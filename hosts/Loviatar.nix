@@ -19,15 +19,10 @@ in
 	};
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
-
-	my.ddcci =
-	{
-		enable = true;
-		displayDev = "AMDGPU DM aux hw bus *";
-	};
 	
 	my.brave.enable = true;
 	my.vesktop.enable = true;
+	my.ssh.enable = true;
 	my.fastfetch.enable = true;
 	my.kde-partition-manager.enable = true;
 	my.kitty.enable = true;
@@ -59,6 +54,10 @@ in
 		gamemode
 		heroic
 		steam
+
+		unityhub
+		dotnet-sdk
+		python3
 
 		cryptsetup
 		steam-run
@@ -109,6 +108,18 @@ in
 			secondaryAccent = "f5f844";
 			background = "242424";
 		};
+	};
+	
+	my.backups =
+	{
+		enable = true;
+		files =
+		[
+			{
+				source = "/data/appdata/UnityEditor";
+				destination = "/home/paczek/Unity/Hub/Editor";
+			}
+		];
 	};
 
 	my.vscodium =
