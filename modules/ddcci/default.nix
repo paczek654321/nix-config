@@ -9,6 +9,7 @@ in
 		displayDev = lib.mkOption
 		{
 			type = lib.types.str;
+			default = "";
 			description = "Pattern used to find i2c backlight compatible displays";
 		};
 	};
@@ -32,7 +33,7 @@ in
 		services.udev.extraRules =
 		let
 			bash = "${pkgs.bash}/bin/bash";
-		in
+		in lib.mkIf (config.my.ddcci.displayDev != "")
 		''
 			SUBSYSTEM=="i2c", ACTION=="add", ATTR{name}=="${config.my.ddcci.displayDev}", \
 				RUN+="${bash} -c 'sleep 30; printf ddcci\ 0x37 > /sys/bus/i2c/devices/%k/new_device'"
