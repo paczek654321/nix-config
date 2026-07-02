@@ -43,6 +43,7 @@ in
 	
 	my.brave.enable = true;
 	my.vesktop.enable = true;
+	my.godot.enable = true;
 	my.ssh.enable = true;
 	my.fastfetch.enable = true;
 	my.kde-partition-manager.enable = true;
