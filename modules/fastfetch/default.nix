@@ -41,90 +41,97 @@ config = lib.mkIf config.my.fastfetch.enable
 					type = "title";
 					key = "  ";
 					format = "{6} {7} {8}";
+					keyColor = "@${colorPalette.ansiiPrimary}";
+					color =
+					{
+						user = "@${colorPalette.ansiiText}";
+						at = "@${colorPalette.ansiiText}";
+						host = "@${colorPalette.ansiiText}";
+					};
 				}
 				{
 					type = "os";
 					key = "  󰣇 OS";
 					format = "{2}";
-					keyColor = "red";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "kernel";
 					key = "   Kernel";
 					format = "{2}";
-					keyColor = "red";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "command";
 					key = "  󱦟 OS Age";
-					keyColor = "red";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 					text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
 				}
 				{
 					type = "uptime";
 					key = "  󱫐 Uptime";
-					keyColor = "red";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "packages";
 					key = "  󰏗 Packages";
-					keyColor = "green";
+					keyColor = "@${colorPalette.ansiiPrimary}";
 				}
 				{
 					type = "display";
 					key = "  󰍹 Display";
 					format = "{1}x{2} @ {3}Hz [{7}]";
-					keyColor = "green";
+					keyColor = "@${colorPalette.ansiiPrimary}";
 				}
 				{
 					type = "terminal";
 					key = "   Terminal";
-					keyColor = "yellow";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "de";
 					key = "   DE";
 					format = "{2}";
-					keyColor = "yellow";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "wm";
 					key = "   WM";
-					keyColor = "yellow";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "wmtheme";
 					key = "   WM Theme";
-					keyColor = "yellow";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "theme";
 					key = "   Theme";
 					format = "{2}";
-					keyColor = "yellow";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "icons";
 					key = "   Icons";
 					format = "{2}";
-					keyColor = "yellow";
+					keyColor = "@${colorPalette.ansiiTertiary}";
 				}
 				{
 					type = "cpu";
 					format = "{1} @ {7}";
 					key = "   CPU";
-					keyColor = "blue";
+					keyColor = "@${colorPalette.ansiiPrimary}";
 				}
 				{
 					type = "gpu";
 					format = "{1} {2}";
 					key = "  󰊴 GPU";
-					keyColor = "blue";
+					keyColor = "@${colorPalette.ansiiPrimary}";
 				}
 				{
 					type = "memory";
 					key = "   Memory";
-					keyColor = "magenta";
+					keyColor = "@${colorPalette.ansiiPrimary}";
 				}
 				{
 					type = "custom";
