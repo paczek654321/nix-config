@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
 
-config = lib.mkIf config.my.hyprland-de.enable
+config = lib.mkIf config.my.hyprland.enable
 {
 	xdg.portal =
 	{

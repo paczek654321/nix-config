@@ -11,11 +11,11 @@ let
 
 	workspaceSwitchPrefix = if cfg.workspaceSwitchPrefix != "" then "${cfg.workspaceSwitchPrefix}&" else "";
 
-	cfg = config.my.hyprland-de.workspaces;
+	cfg = config.my.hyprland.workspaces;
 in
 {
 
-options.my.hyprland-de.workspaces =
+options.my.hyprland.workspaces =
 {
 	monitors = lib.mkOption
 	{
@@ -46,7 +46,7 @@ options.my.hyprland-de.workspaces =
 	};
 };
 
-config = lib.mkIf config.my.hyprland-de.enable
+config = lib.mkIf config.my.hyprland.enable
 {
 	home-manager.users."${config.my.user.username}".wayland.windowManager.hyprland =
 	{

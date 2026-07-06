@@ -88,24 +88,15 @@ in
 		nerd-fonts.symbols-only
 	];
 
-	my.hyprland-de =
+	my.hyprland =
 	{
-		enable = true;
 		workspaces =
 		{
-			monitors =
-			[
-				"eDP-1"
-			];
+			monitors = [ "eDP-1" ];
 			workspaceSwitchPrefix = "";
 		};
-		settings =
-		{
-			monitor =
-			[
-				"eDP-1, highrr, auto, 1"
-			];
-		};
+		
+		settings.monitor = [ "eDP-1, highrr, auto, 1" ];
 	};
 
 	my.platform-theme =

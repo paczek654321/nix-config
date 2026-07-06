@@ -84,7 +84,7 @@ in
 		nerd-fonts.symbols-only
 	];
 
-	my.hyprland-de =
+	my.hyprland =
 	{
 		enable = true;
 		workspaces.monitors =
@@ -92,15 +92,12 @@ in
 			"DP-1"
 			"DP-2"
 		];
-		settings =
-		{
-			monitor =
-			[
-				"DP-1, highrr, auto-right, 1"
-				"DP-2, highrr, auto-left, 1"
-				"HDMI-A-1, disable"
-			];
-		};
+		settings.monitor =
+		[
+			"DP-1, highrr, auto-right, 1"
+			"DP-2, highrr, auto-left, 1"
+			"HDMI-A-1, disable"
+		];
 	};
 
 	my.waybar =

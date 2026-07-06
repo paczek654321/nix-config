@@ -1,7 +1,7 @@
 { config, lib, ... }:
 {
 
-config = lib.mkIf config.my.hyprland-de.enable
+config = lib.mkIf config.my.hyprland.enable
 {
 	home-manager.users."${config.my.user.username}".services.hyprpaper =
 	{

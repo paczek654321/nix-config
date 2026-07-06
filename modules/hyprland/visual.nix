@@ -4,9 +4,9 @@ let
 in
 {
 
-config = lib.mkIf config.my.hyprland-de.enable
+config = lib.mkIf config.my.hyprland.enable
 {
-	home-manager.users."${config.my.user.username}".wayland.windowManager.hyprland.settings =
+	my.hyprland.settings =
 	{
 		env =
 		[

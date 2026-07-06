@@ -5,20 +5,19 @@ options.my.dolphin.enable = lib.mkEnableOption "Enable dolphin";
 
 config = lib.mkIf config.my.dolphin.enable
 {
-	home-manager.users."${config.my.user.username}" =
-	{
-		wayland.windowManager.hyprland.settings.exec-once = lib.mkIf config.my.hyprland-de.enable
-		[
-			"kbuildsycoca6"
-		];
+	my.hyprland.settings.exec-once = lib.mkIf config.my.hyprland.enable
+	[
+		"kbuildsycoca6"
+	];
+	
+	home-manager.users."${config.my.user.username}".home.packages = with pkgs;
+	[
+		kdePackages.dolphin
+		kdePackages.kde-cli-tools
+		kdePackages.kservice
+	];
 
-		home.packages = with pkgs;
-		[
-			kdePackages.dolphin
-			kdePackages.kde-cli-tools
-			kdePackages.kservice
-		];
-	};
+	services.udisks2.enable = true;
 
 	environment.systemPackages = with pkgs;
 	[

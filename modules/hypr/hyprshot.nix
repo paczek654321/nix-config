@@ -4,14 +4,14 @@ let
 in
 {
 
-config = lib.mkIf config.my.hyprland-de.enable
+config = lib.mkIf config.my.hyprland.enable
 {
 	home-manager.users."${username}".home.packages = with pkgs;
 	[
 		hyprshot
 		hyprpicker
 	];
-	my.hyprland-de.settings.bind = ["$mainMod, S, exec, hyprshot -z -m region --clipboard-only"];
+	my.hyprland.settings.bind = ["$mainMod, S, exec, hyprshot -z -m region --clipboard-only"];
 };
 
 }

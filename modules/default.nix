@@ -6,7 +6,7 @@
 		./bluetooth
 		./platform-theme
 		./user
-		./hyprland-de
+		./hyprland
 		./waybar
 		./wofi
 		./ssh
@@ -26,5 +26,8 @@
 		./locale
 		./dolphin
 		./vsftpd
+		./noctalia
+		./wl-clip-persist
+		./hypr
 	];
 }

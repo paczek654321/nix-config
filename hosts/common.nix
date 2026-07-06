@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 let
 	colorPalette = config.my.platform-theme.colorPalette;
 in
@@ -99,33 +99,6 @@ in
 		settings.shellAliases.pass = "/data/pass.sh";
 	};
 
-	my.waybar =
-	{
-		modules-left =
-		[
-			"custom/refresh"
-			"hyprland/workspaces"
-		];
-		modules-center =
-		[
-			"hyprland/window"
-		];
-		modules-right =
-		[
-			"keyboard-state"
-			"idle_inhibitor"
-			"pulseaudio"
-			"network"
-			"power-profiles-daemon"
-			"custom/brightness"
-			"clock"
-			"tray"
-			"custom/poweroff"
-			"custom/reboot"
-			"custom/logout"
-		];
-	};
-
 	my.git =
 	{
 		enable = true;
@@ -141,4 +114,15 @@ in
 			};
 		};
 	};
+
+	my.hyprland =
+	{
+		enable = true;
+		settings.bind = [ "$mainMod, 2, exec, ${lib.getExe pkgs.kitty}" ];
+	};
+
+	my.noctalia.enable = true;
+	my.platform-theme.enable = true;
+	my.wl-clip-persist.enable = true;
+	services.displayManager.ly.enable = true;
 }

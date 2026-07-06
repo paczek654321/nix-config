@@ -9,6 +9,7 @@ imports =
 	./scripts.nix
 	./style.nix
 	./bar-modules.nix
+	./layout.nix
 
 	(lib.mkAliasOptionModule [ "my" "waybar" "custom" ] [ "home-manager" "users" username "programs" "waybar" "settings" "mainBar" ] )
 ];
@@ -40,11 +41,13 @@ config = lib.mkIf config.my.waybar.enable
 {
 	my.ddcci.enable = true;
 	users.users."${username}".extraGroups = [ "input" ];
+	
+	my.hyprland.settings.exec-once = lib.mkIf config.my.hyprland.enable ["waybar"];
+	
 	home-manager.users."${username}" =
 	{
 		home.packages = with pkgs; [ brightnessctl ];
 
-		wayland.windowManager.hyprland.settings.exec-once = lib.mkIf config.my.hyprland-de.enable ["waybar"];
 		programs.waybar =
 		{
 			enable = true;

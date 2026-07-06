@@ -4,10 +4,10 @@ let
 in
 {
 
-config = lib.mkIf config.my.hyprland-de.enable
+config = lib.mkIf config.my.hyprland.enable
 {
 	security.pam.services.hyprlock = {};
-	my.hyprland-de.settings.bind = [ "$mainMod, ESCAPE, exec, hyprlock" ];
+	my.hyprland.settings.bind = [ "$mainMod, ESCAPE, exec, hyprlock" ];
 	home-manager.users."${config.my.user.username}".programs.hyprlock =
 	{
 		enable = true;

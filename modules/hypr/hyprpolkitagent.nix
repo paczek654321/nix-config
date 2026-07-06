@@ -4,7 +4,7 @@ let
 in
 {
 
-config = lib.mkIf config.my.hyprland-de.enable
+config = lib.mkIf config.my.hyprland.enable
 {
 	security.polkit.enable = true;
 
