@@ -119,7 +119,7 @@ in
 		];
 	};
 
-	my.platform-theme =
+	my.platform-theme = lib.mkDefault
 	{
 		font_size = 11;
 		default_font = "Adwaita Sans";

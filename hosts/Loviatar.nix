@@ -99,7 +99,7 @@ in
 		settings.monitor = [ "eDP-1, highrr, auto, 1" ];
 	};
 
-	my.platform-theme =
+	my.platform-theme = lib.mkDefault
 	{
 		font_size = 11;
 		default_font = "Adwaita Sans";

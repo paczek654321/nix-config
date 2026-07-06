@@ -45,6 +45,11 @@ config = lib.mkIf config.my.noctalia.enable
 		# Allow imperative configuration while still tracking the config in the flake git repo
 		home.file.".config/noctalia/settings.json".source = lib.mkIf (cfg.settingsFile != null) (mkOutOfStoreSymlink cfg.settingsFile);
 	};
+
+	my.platform-theme = lib.mkIf config.my.platform-theme.enable
+	{
+		qt_colorscheme_path = "/home/paczek/.config/qt6ct/colors/noctalia.conf";
+	};
 };
 
 }
