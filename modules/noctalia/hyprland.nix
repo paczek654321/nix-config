@@ -3,6 +3,7 @@
 
 config = lib.mkIf (config.my.noctalia.enable && config.my.hyprland.enable)
 {
+	my.hyprland.enableHyprpaper = false;
 	my.hyprland.settings =
 	{
 		bind =

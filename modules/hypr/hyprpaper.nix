@@ -1,7 +1,14 @@
 { config, lib, ... }:
 {
 
-config = lib.mkIf config.my.hyprland.enable
+options.my.hyprland.enableHyprpaper = lib.mkOption
+{
+	type = lib.types.bool;
+	default = true;
+	description = "Enable hyprpaper";
+};
+
+config = lib.mkIf (config.my.hyprland.enableHyprpaper && config.my.hyprland.enable)
 {
 	home-manager.users."${config.my.user.username}".services.hyprpaper =
 	{
