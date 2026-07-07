@@ -125,8 +125,8 @@ in
 		default_font = "Adwaita Sans";
 		monospace_font = "Adwaita Mono";
 		font_pkg = pkgs.adwaita-fonts;
-		icon_theme = "Cool-Dark-Icons";
-		icon_theme_pkg = pkgs.cool-dark-icons;
+		icon_theme = "BeautySolar";
+		icon_theme_pkg = pkgs.beauty-solar;
 		qt_colorscheme_path = "${pkgs.kdePackages.breeze}/share/color-schemes/BreezeDark.colors";
 		cursor_name = "breeze_cursors";
 		cursor_pkg = pkgs.kdePackages.breeze;

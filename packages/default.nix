@@ -20,6 +20,7 @@ nixpkgs.overlays =
 
 		cool-dark-icons = final.callPackage ./cool-dark-icons.nix {};
 		sours-full-color = final.callPackage ./sours-full-color.nix {};
+		beauty-solar = final.callPackage ./beauty-solar.nix {};
 		soundux = final.callPackage ./soundux.nix {};
 		godot = final.callPackage ./godot.nix {};
 	})
