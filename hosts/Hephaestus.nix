@@ -133,13 +133,13 @@ in
 
 		colorPalette =
 		{
-			ansiiPrimary = "165";
-			ansiiSecondary = "57";
-			ansiiTertiary = "111";
+			ansiiPrimary = "124";
+			ansiiSecondary = "198";
+			ansiiTertiary = "220";
 			ansiiText = "15";
-			primaryAccent = "aa33ff";
+			primaryAccent = "FD4663";
 			secondaryAccent = "ff33aa";
-			background = "242424";
+			background = "281418";
 		};
 	};
 
