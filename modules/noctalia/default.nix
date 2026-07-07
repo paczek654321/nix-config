@@ -51,6 +51,7 @@ config = lib.mkIf config.my.noctalia.enable
 	{
 		qt_colorscheme_path = "/home/${username}/.local/share/color-schemes/noctalia.colors";
 	};
+	my.vscodium.settings.workbench.colorTheme = lib.mkIf config.my.vscodium.enable "NoctaliaTheme";
 };
 
 }
