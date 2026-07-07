@@ -13,6 +13,16 @@ pkgs.stdenv.mkDerivation
 		hash = "sha256-1egCvrzqZpR0X4RvkCc8OpnJWtMhwzJnbszCtvrR7/4=";
 		sparseCheckout = [ path ];
 	};
+
+	patchPhase =
+	''
+		for dir in "${path}"/places/*/; do
+			[ -d "$dir" ] || continue
+			[ -f "$dir/folder.svg" ] || continue
+			ln -sfn ./folder.svg "$dir/inode-directory.svg"
+		done
+	'';
+
 	installPhase =
 	''
 		mkdir -p $out/share/icons
