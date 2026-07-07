@@ -55,7 +55,7 @@ config = lib.mkIf config.my.hyprland.enable
 			"$workspaceMod" = "${cfg.workspaceMod}";
 			"$workspaceMoveMod" = "${cfg.workspaceMoveMod}";
 		
-			workspace = concatMonitorsMap (w: m: "${workspaceIdx w m}, monitor:${builtins.elemAt monitors m}");
+			workspace = concatMonitorsMap (w: m: "${workspaceIdx w m}, defaultName:${toString (w + 1)}, monitor:${builtins.elemAt monitors m}");
 		
 			bindns = concatMonitorsMap (w: m: "$workspaceMod, ${workspaceSwitchPrefix}${idx2key w}, workspace, ${workspaceIdx w m}");
 
