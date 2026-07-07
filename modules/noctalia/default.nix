@@ -1,6 +1,7 @@
 { config, lib, inputs, ... }:
 let
 	cfg = config.my.noctalia;
+	username = config.my.user.username;
 in
 {
 
@@ -31,7 +32,7 @@ config = lib.mkIf config.my.noctalia.enable
 
 	my.hyprland.settings.exec-once = lib.mkIf config.my.hyprland.enable ["noctalia-shell"];
 
-	home-manager.users."${config.my.user.username}" = hm:
+	home-manager.users."${username}" = hm:
 	let
 		mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
 	in
@@ -48,7 +49,7 @@ config = lib.mkIf config.my.noctalia.enable
 
 	my.platform-theme = lib.mkIf config.my.platform-theme.enable
 	{
-		qt_colorscheme_path = "/home/paczek/.config/qt6ct/colors/noctalia.conf";
+		qt_colorscheme_path = "/home/${username}/.local/share/color-schemes/noctalia.colors";
 	};
 };
 
