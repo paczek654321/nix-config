@@ -81,5 +81,5 @@ in
 		];
 	};
 
-	my.vscodium.workbench.colorTheme = "Sweet Dracula Monokai";
+	my.vscodium.settings.workbench.colorTheme = "Sweet Dracula Monokai";
 }
