@@ -29,12 +29,6 @@ in
 		})
 	];
 
-	my.ddcci =
-	{
-		enable = true;
-		displayDev = "AMDGPU DM aux hw bus *";
-	};
-
 	my.hyprland =
 	{
 		enable = true;
