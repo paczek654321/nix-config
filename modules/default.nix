@@ -30,5 +30,6 @@
 		./wl-clip-persist
 		./hypr
 		./piper-git
+		./steam
 	];
 }

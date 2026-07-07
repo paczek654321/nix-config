@@ -82,7 +82,6 @@ in
 
 			gamemode
 			heroic
-			steam
 
 			unityhub
 			dotnet-sdk
@@ -179,6 +178,7 @@ in
 	my.dolphin.enable = true;
 	my.r2modman.enable = true;
 	my.piper-git.enable = true;
+	my.steam.enable = true;
 
 	my.hyprland =
 	{

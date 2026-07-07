@@ -24,6 +24,12 @@ inputs =
     	url = "github:noctalia-dev/noctalia/legacy-v4";
     	inputs.nixpkgs.follows = "nixpkgs";
     };
+
+	millennium =
+	{
+    	url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    	inputs.nixpkgs.follows = "nixpkgs";
+    };
 };
 
 nixConfig =
