@@ -51,25 +51,6 @@ in
 		];
 	};
 
-	my.waybar =
-	{
-		custom =
-		{
-			"custom/tv" =
-			{
-				tooltip = false;
-				exec = "hyprctl monitors | grep HDMI-A-1 | read && echo  || echo 󰻆";
-				on-click = "hyprctl keyword monitor \"HDMI-A-1, $(hyprctl monitors | grep HDMI-A-1 | read && echo disable || echo highres, auto-left, 1)\"";
-				exec-on-event = true;
-				interval = "once";
-			};
-		};
-		modules-right = lib.mkBefore
-		[
-			"custom/tv"
-		];
-	};
-
 	my.platform-theme = lib.mkDefault
 	{
 		icon_theme = "BeautySolar";
