@@ -34,55 +34,6 @@ in
 		enable = true;
 		displayDev = "AMDGPU DM aux hw bus *";
 	};
-	
-	my.brave.enable = true;
-	my.vesktop.enable = true;
-	my.godot.enable = true;
-	my.r2modman.enable = true;
-	my.ssh.enable = true;
-	my.fastfetch.enable = true;
-	my.kde-partition-manager.enable = true;
-	my.kitty.enable = true;
-	my.easyeffects.enable = true;
-	my.dolphin.enable = true;
-
-	my.user.packages = with pkgs;
-	[
-		kdePackages.ark
-		kdePackages.gwenview
-		kdePackages.kate
-		kdePackages.okular
-		kdePackages.isoimagewriter
-		kdePackages.filelight
-		
-		vlc
-		xfburn
-		libreoffice-fresh
-
-		krita
-		blender
-		audacity
-		lmms
-
-		obs-studio
-		obsidian
-		spotify
-		soundux
-
-		gamemode
-		heroic
-		steam
-
-		unityhub
-		dotnet-sdk
-		python3
-
-		cryptsetup
-		steam-run
-		openssl
-
-		nerd-fonts.symbols-only
-	];
 
 	my.hyprland =
 	{
@@ -121,16 +72,8 @@ in
 
 	my.platform-theme = lib.mkDefault
 	{
-		font_size = 11;
-		default_font = "Adwaita Sans";
-		monospace_font = "Adwaita Mono";
-		font_pkg = pkgs.adwaita-fonts;
 		icon_theme = "BeautySolar";
 		icon_theme_pkg = pkgs.beauty-solar;
-		qt_colorscheme_path = "${pkgs.kdePackages.breeze}/share/color-schemes/BreezeDark.colors";
-		cursor_name = "breeze_cursors";
-		cursor_pkg = pkgs.kdePackages.breeze;
-
 		colorPalette =
 		{
 			ansiiPrimary = "124";
@@ -163,19 +106,5 @@ in
 		];
 	};
 
-	my.vscodium =
-	{
-		enable = true;
-		settings =
-		{
-			editor =
-			{
-				tabSize = 4;
-				insertSpaces = false;
-				detectIndentation = false;
-			};
-			"[nix]".editor = config.my.vscodium.settings.editor;
-			workbench.colorTheme = "Sweet Dracula Monokai";
-		};
-	};
+	my.vscodium.workbench.colorTheme = "Sweet Dracula Monokai";
 }

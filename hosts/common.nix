@@ -56,6 +56,44 @@ in
 	{
 		enable = true;
 		username = "paczek";
+
+		packages = with pkgs;
+		[
+			kdePackages.ark
+			kdePackages.gwenview
+			kdePackages.kate
+			kdePackages.okular
+			kdePackages.isoimagewriter
+			kdePackages.filelight
+			
+			vlc
+			xfburn
+			libreoffice-fresh
+
+			krita
+			blender
+			audacity
+			lmms
+
+			obs-studio
+			obsidian
+			spotify
+			soundux
+
+			gamemode
+			heroic
+			steam
+
+			unityhub
+			dotnet-sdk
+			python3
+
+			cryptsetup
+			steam-run
+			openssl
+
+			nerd-fonts.symbols-only
+		];
 	};
 
 	my.vsftpd.enable = true;
@@ -115,14 +153,52 @@ in
 		};
 	};
 
+	my.vscodium =
+	{
+		enable = true;
+		settings =
+		{
+			editor =
+			{
+				tabSize = 4;
+				insertSpaces = false;
+				detectIndentation = false;
+			};
+			"[nix]".editor = config.my.vscodium.settings.editor;
+		};
+	};
+
+	my.brave.enable = true;
+	my.vesktop.enable = true;
+	my.godot.enable = true;
+	my.ssh.enable = true;
+	my.fastfetch.enable = true;
+	my.kde-partition-manager.enable = true;
+	my.kitty.enable = true;
+	my.easyeffects.enable = true;
+	my.dolphin.enable = true;
+	my.r2modman.enable = true;
+
 	my.hyprland =
 	{
 		enable = true;
 		settings.bind = [ "$mainMod, 2, exec, ${lib.getExe pkgs.kitty}" ];
 	};
+	
+
+	my.platform-theme = lib.mkDefault
+	{
+		enable = true;
+		font_size = 11;
+		default_font = "Adwaita Sans";
+		monospace_font = "Adwaita Mono";
+		font_pkg = pkgs.adwaita-fonts;
+		qt_colorscheme_path = "${pkgs.kdePackages.breeze}/share/color-schemes/BreezeDark.colors";
+		cursor_name = "breeze_cursors";
+		cursor_pkg = pkgs.kdePackages.breeze;
+	};
 
 	my.noctalia.enable = true;
-	my.platform-theme.enable = true;
 	my.wl-clip-persist.enable = true;
 	services.displayManager.ly.enable = true;
 
