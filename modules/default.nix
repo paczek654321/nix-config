@@ -29,5 +29,6 @@
 		./noctalia
 		./wl-clip-persist
 		./hypr
+		./piper-git
 	];
 }

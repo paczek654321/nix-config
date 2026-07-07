@@ -178,6 +178,7 @@ in
 	my.easyeffects.enable = true;
 	my.dolphin.enable = true;
 	my.r2modman.enable = true;
+	my.piper-git.enable = true;
 
 	my.hyprland =
 	{
