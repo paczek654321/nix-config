@@ -125,4 +125,7 @@ in
 	my.platform-theme.enable = true;
 	my.wl-clip-persist.enable = true;
 	services.displayManager.ly.enable = true;
+
+	home-manager.backupFileExtension = "hm-backup";
+	home-manager.overwriteBackup = true;
 }
