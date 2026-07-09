@@ -39,6 +39,12 @@ in
 			device = "/dev/disk/by-label/data";
 			fsType = "btrfs";
 		};
+
+		"/home/${config.my.user.username}/data" =
+		{
+			device = "/dev/disk/by-label/data";
+			fsType = "btrfs";
+		};
 	};
 
 	time.timeZone = "Europe/Warsaw";
