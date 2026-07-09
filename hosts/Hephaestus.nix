@@ -71,10 +71,6 @@ in
 				destination = ".local/share/Terraria";
 			}
 			{
-				source = "/data/appdata/SteamRecordings";
-				destination = ".local/share/Steam/userdata/1249129951/gamerecordings";
-			}
-			{
 				source = "/data/appdata/UnityEditor";
 				destination = "/home/paczek/Unity/Hub/Editor";
 			}
