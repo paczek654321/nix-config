@@ -31,5 +31,6 @@
 		./hypr
 		./piper-git
 		./steam
+		./modrinth
 	];
 }
