@@ -96,6 +96,7 @@ in
 			cryptsetup
 			steam-run
 			openssl
+			jq
 
 			nerd-fonts.symbols-only
 		];
