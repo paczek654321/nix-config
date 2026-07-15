@@ -49,7 +49,11 @@ in
 			workspaceSwitchPrefix = "";
 		};
 		
-		settings.monitor = [ "eDP-1, highrr, auto, 1" ];
+		settings.monitor =
+		[
+			"eDP-1, highrr, auto, 1"
+			"HDMI-A-1, highrr, auto, 1, mirror, eDP-1"
+		];
 	};
 
 	my.platform-theme = lib.mkDefault
