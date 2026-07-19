@@ -10,7 +10,7 @@ config = lib.mkIf config.my.godot.enable
 		mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
 	in
 	{
-		home.packages = [ pkgs.godot ];
+		home.packages = [ pkgs.godotPackages_4_5.godot ];
 		home.file.".local/share/godot".source = mkOutOfStoreSymlink "/data/appdata/Godot/share";
 		home.file.".config/godot".source = mkOutOfStoreSymlink "/data/appdata/Godot/config";
 	};

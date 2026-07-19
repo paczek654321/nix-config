@@ -6,7 +6,8 @@ nixpkgs.overlays =
 	(final: prev: 
 	{
 		
-		qt6Packages = prev.qt6Packages // {
+		qt6Packages = prev.qt6Packages //
+		{
 			qt6ct = inputs.ilya-fedin.packages.${prev.stdenv.hostPlatform.system}.qt6ct;
 		};
 
@@ -40,11 +41,32 @@ nixpkgs.overlays =
 			};
 		});
 
+		godotPackages_4_5 = prev.godotPackages_4_5 //
+		{
+			godot = prev.godotPackages_4_5.godot.overrideAttrs (old:
+			{
+				src = prev.fetchFromGitHub
+				{
+					owner = "paczek654321";
+					repo = "godot";
+					rev = "6d25d159d391c6735d031ce5cc2f29e708173001";
+					hash = "sha256-TjyycL37KX8ur9XkYYxjFY42NUz1fnQdJJ+7qlW2ZOY=";
+				};
+			});
+
+			godot-mono = final.godotPackages_4_5.godot.override
+			{
+				withMono = true;
+			};
+
+			export-template = final.godotPackages_4_5.godot.export-template;
+			export-template-mono = final.godotPackages_4_5.godot-mono.export-template;
+		};
+
 		cool-dark-icons = final.callPackage ./cool-dark-icons.nix {};
 		sours-full-color = final.callPackage ./sours-full-color.nix {};
 		beauty-solar = final.callPackage ./beauty-solar.nix {};
 		soundux = final.callPackage ./soundux.nix {};
-		godot = final.callPackage ./godot.nix {};
 	})
 ];
 
