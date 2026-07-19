@@ -93,6 +93,9 @@ in
 			dotnet-sdk
 			python3
 
+			clang-tools
+    		clang
+
 			cryptsetup
 			steam-run
 			openssl
