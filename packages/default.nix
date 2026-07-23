@@ -49,8 +49,8 @@ nixpkgs.overlays =
 				{
 					owner = "paczek654321";
 					repo = "godot";
-					rev = "6d25d159d391c6735d031ce5cc2f29e708173001";
-					hash = "sha256-TjyycL37KX8ur9XkYYxjFY42NUz1fnQdJJ+7qlW2ZOY=";
+					rev = "8cd9d93a4610b7165e75a427d2a8b76febbe747c";
+					hash = "sha256-p892FXO7vdxPRdwXk4TK1kDE2RHoj/Q3Lhyh7hD6XrY=";
 				};
 			});
 
