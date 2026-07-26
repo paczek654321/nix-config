@@ -25,8 +25,8 @@ nixpkgs.overlays =
 			{
 				owner = "libratbag";
 				repo = "piper";
-				rev = "master";
-				hash = "sha256-0Rt/ere8kd3vYgouTPJwLy1D4VwEukDCiaR0wxOMhKk=";
+				rev = "452f46ce861948cacdf0f7948964e67a29d027b9";
+				hash = "sha256-0PLf8YZmEV1SQcEMEa0fm9GZkrD8jvtNG+iIeqRkJJw=";
 			};
 		});
 		
@@ -36,8 +36,8 @@ nixpkgs.overlays =
 			{
 				owner = "libratbag";
 				repo = "libratbag";
-				rev = "master";
-				hash = "sha256-c4nAVhI3m9VeGy+rZLPS8Z98RS9JbrHe/mdiuee5y4s=";
+				rev = "03afbe49f30a4fd18d830530685804eb3bd57c39";
+				hash = "sha256-vlo3RfpLJQTw7P5Bmopl8vi4nDrY9OwNM6tVja+scq8=";
 			};
 		});
 
