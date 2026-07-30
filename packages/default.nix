@@ -5,6 +5,7 @@ nixpkgs.overlays =
 [
 	(final: prev: 
 	{
+		krita = inputs.hephaestus-firmware.legacyPackages.${prev.stdenv.hostPlatform.system}.krita;
 		
 		qt6Packages = prev.qt6Packages //
 		{
