@@ -187,6 +187,7 @@ in
 	my.piper-git.enable = true;
 	my.steam.enable = true;
 	#my.modrinth.enable = true;
+	my.syncthing.enable = true;
 
 	my.hyprland =
 	{

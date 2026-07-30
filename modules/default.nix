@@ -32,5 +32,6 @@
 		./piper-git
 		./steam
 		./modrinth
+		./syncthing
 	];
 }
