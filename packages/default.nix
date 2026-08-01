@@ -1,11 +1,11 @@
-{ pkgs, inputs, ... }:
+{ pkgs, pkgsOld, inputs, ... }:
 {
 
 nixpkgs.overlays = 
 [
 	(final: prev: 
 	{
-		krita = inputs.hephaestus-firmware.legacyPackages.${prev.stdenv.hostPlatform.system}.krita;
+		krita = pkgsOld.krita;
 		
 		qt6Packages = prev.qt6Packages //
 		{

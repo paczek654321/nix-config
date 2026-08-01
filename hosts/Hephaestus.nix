@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, pkgsOld, ... }:
 let
 	colorPalette = config.my.platform-theme.colorPalette;
 in
@@ -25,7 +25,7 @@ in
 	[
 		(final: prev: 
 		{
-			linux-firmware = inputs.hephaestus-firmware.legacyPackages.${prev.stdenv.hostPlatform.system}.linux-firmware;
+			linux-firmware = pkgsOld.linux-firmware;
 		})
 	];
 

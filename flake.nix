@@ -5,7 +5,7 @@ description = "Nixos config flake";
 inputs =
 {
 	nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-	hephaestus-firmware.url = "github:NixOS/nixpkgs/78173555c5d16bee8ab97ce9ef1d257d5657b442";
+	nixpkgs-old.url = "github:NixOS/nixpkgs/78173555c5d16bee8ab97ce9ef1d257d5657b442";
 
 	home-manager =
 	{
@@ -39,11 +39,19 @@ nixConfig =
 };
 
 outputs = { self, nixpkgs, ... }@inputs:
+let
+	pkgsOld = import inputs.nixpkgs-old
+	{
+		system = "x86_64-linux";
+		config.allowUnfree = true;
+  	};
+	specialArgs = { inherit inputs pkgsOld; };
+in
 {
 	nixosConfigurations.Hephaestus = nixpkgs.lib.nixosSystem
 	{
 		system = "x86_64-linux";
-		specialArgs = {inherit inputs; };
+		inherit specialArgs;
 		modules =
 		[
 			./packages
@@ -54,7 +62,7 @@ outputs = { self, nixpkgs, ... }@inputs:
 	nixosConfigurations.Loviatar = nixpkgs.lib.nixosSystem
 	{
 		system = "x86_64-linux";
-		specialArgs = {inherit inputs; };
+		inherit specialArgs;
 		modules =
 		[
 			./packages
