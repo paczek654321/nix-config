@@ -186,7 +186,7 @@ in
 	my.r2modman.enable = true;
 	my.piper-git.enable = true;
 	my.steam.enable = true;
-	#my.modrinth.enable = true;
+	my.modrinth.enable = true;
 	my.syncthing.enable = true;
 
 	my.hyprland =
