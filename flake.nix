@@ -6,6 +6,7 @@ inputs =
 {
 	nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 	nixpkgs-old.url = "github:NixOS/nixpkgs/78173555c5d16bee8ab97ce9ef1d257d5657b442";
+	nixpkgs-git.url = "github:nixos/nixpkgs/master";
 
 	home-manager =
 	{
@@ -40,18 +41,23 @@ nixConfig =
 
 outputs = { self, nixpkgs, ... }@inputs:
 let
+	system = "x86_64-linux";
 	pkgsOld = import inputs.nixpkgs-old
 	{
-		system = "x86_64-linux";
+		inherit system;
 		config.allowUnfree = true;
   	};
-	specialArgs = { inherit inputs pkgsOld; };
+	pkgsGit = import inputs.nixpkgs-git
+	{
+		inherit system;
+		config.allowUnfree = true;
+  	};
+	specialArgs = { inherit inputs pkgsOld pkgsGit; };
 in
 {
 	nixosConfigurations.Hephaestus = nixpkgs.lib.nixosSystem
 	{
-		system = "x86_64-linux";
-		inherit specialArgs;
+		inherit system specialArgs;
 		modules =
 		[
 			./packages
@@ -61,8 +67,7 @@ in
 	};
 	nixosConfigurations.Loviatar = nixpkgs.lib.nixosSystem
 	{
-		system = "x86_64-linux";
-		inherit specialArgs;
+		inherit system specialArgs;
 		modules =
 		[
 			./packages
