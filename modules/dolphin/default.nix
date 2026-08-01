@@ -24,6 +24,8 @@ config = lib.mkIf config.my.dolphin.enable
 		kdePackages.kio
 		kdePackages.kio-extras
 		kdePackages.kio-fuse
+		kdePackages.kded
+		kdePackages.plasma-workspace
 	];
 };
 
