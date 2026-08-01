@@ -21,6 +21,7 @@ options.my.noctalia =
 config = lib.mkIf config.my.noctalia.enable
 {
 	networking.networkmanager.enable = true;
+	users.users."${username}".extraGroups = [ "networkmanager" ];
 	services.power-profiles-daemon.enable = true;
 	services.upower.enable = true;
 
