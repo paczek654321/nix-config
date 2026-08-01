@@ -5,7 +5,7 @@ config = lib.mkIf config.my.waybar.enable
 {
 	my.wofi.enable = true;
 
-	home-manager.users."${config.my.user.username}".home.packages = with pkgs;
+	environment.systemPackages = with pkgs;
 	[
 		killall
 		(writeShellScriptBin "wofi_wifi.sh"

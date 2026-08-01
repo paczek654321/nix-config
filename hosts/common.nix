@@ -58,48 +58,48 @@ in
 		consoleKeymap = "pl2";
 	};
 
+	environment.systemPackages = with pkgs;
+	[
+		kdePackages.ark
+		kdePackages.gwenview
+		kdePackages.kate
+		kdePackages.okular
+		kdePackages.isoimagewriter
+		kdePackages.filelight
+		
+		vlc
+		xfburn
+		libreoffice-fresh
+
+		krita
+		blender
+		audacity
+		lmms
+
+		obs-studio
+		obsidian
+		spotify
+		soundux
+
+		gamemode
+		heroic
+
+		unityhub
+		dotnet-sdk
+		python3
+
+		cryptsetup
+		steam-run
+		openssl
+		jq
+
+		nerd-fonts.symbols-only
+	];
+
 	my.user =
 	{
 		enable = true;
 		username = "paczek";
-
-		packages = with pkgs;
-		[
-			kdePackages.ark
-			kdePackages.gwenview
-			kdePackages.kate
-			kdePackages.okular
-			kdePackages.isoimagewriter
-			kdePackages.filelight
-			
-			vlc
-			xfburn
-			libreoffice-fresh
-
-			krita
-			blender
-			audacity
-			lmms
-
-			obs-studio
-			obsidian
-			spotify
-			soundux
-
-			gamemode
-			heroic
-
-			unityhub
-			dotnet-sdk
-			python3
-
-			cryptsetup
-			steam-run
-			openssl
-			jq
-
-			nerd-fonts.symbols-only
-		];
 	};
 
 	my.vsftpd.enable = true;

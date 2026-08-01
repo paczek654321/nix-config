@@ -40,6 +40,7 @@ in
 		'';
 
 		users.users."${username}".extraGroups = [ "i2c" ];
-		home-manager.users."${username}".home.packages = with pkgs; [ddcutil];
+
+		environment.systemPackages = with pkgs; [ ddcutil ];
 	};
 }

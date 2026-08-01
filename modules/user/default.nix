@@ -18,12 +18,6 @@ options.my.user =
 		default = "user";
 		description = "Username for the primary user";
 	};
-	packages = lib.mkOption
-	{
-		type = lib.types.listOf lib.types.package;
-		default = [ ];
-		description = "The set of packages to appear in the user environment.";
-    };
 };
 
 config = lib.mkIf config.my.user.enable
@@ -43,8 +37,6 @@ config = lib.mkIf config.my.user.enable
 		home.stateVersion = "25.11";
 		home.username = username;
 		home.homeDirectory = "/home/${username}";
-
-		home.packages = config.my.user.packages;
 	};
 };
 

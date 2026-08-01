@@ -46,8 +46,6 @@ config = lib.mkIf config.my.waybar.enable
 	
 	home-manager.users."${username}" =
 	{
-		home.packages = with pkgs; [ brightnessctl ];
-
 		programs.waybar =
 		{
 			enable = true;
@@ -59,6 +57,8 @@ config = lib.mkIf config.my.waybar.enable
 			};
 		};
 	};
+
+	environment.systemPackages = with pkgs; [ brightnessctl ];
 };
 
 }

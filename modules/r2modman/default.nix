@@ -10,10 +10,10 @@ config = lib.mkIf config.my.r2modman.enable
 		mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
 	in
 	{
-		home.packages = [ pkgs.r2modman ];
 		home.file.".config/r2modman".source = mkOutOfStoreSymlink "/data/appdata/r2modman/config";
 		home.file.".config/r2modmanPlus-local".source = mkOutOfStoreSymlink "/data/appdata/r2modman/games";
 	};
+	environment.systemPackages = with pkgs; [ r2modman ];
 };
 
 }

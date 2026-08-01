@@ -10,8 +10,7 @@ config = lib.mkIf config.my.modrinth.enable
 		modrinth-app-unwrapped = pkgsGit.modrinth-app-unwrapped;
 		modrinth-app = pkgsGit.modrinth-app;
 	})];
-
-	home-manager.users."${config.my.user.username}".home.packages = [ pkgs.modrinth-app ];
+	environment.systemPackages = with pkgs; [ modrinth-app ];
 };
 
 }

@@ -1,11 +1,6 @@
 { config, lib, inputs, pkgs, ... }:
 {
 
-imports =
-[
-	
-];
-
 options.my.steam.enable = lib.mkEnableOption "Enable Steam";
 
 config = lib.mkIf config.my.steam.enable
@@ -17,7 +12,6 @@ config = lib.mkIf config.my.steam.enable
 		mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
 	in
 	{
-		home.packages = [ pkgs.millennium-steam ];
 		home.file =
 		{
 			".local/share/millennium/plugins".source = mkOutOfStoreSymlink "/data/appdata/Millennium/plugins";
@@ -25,6 +19,8 @@ config = lib.mkIf config.my.steam.enable
 			".config/millennium".source = mkOutOfStoreSymlink "/data/appdata/Millennium/config";
 		};
 	};
+
+	environment.systemPackages = with pkgs; [ millennium-steam ];
 };
 
 }

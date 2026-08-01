@@ -5,9 +5,9 @@ config = lib.mkIf config.my.hyprland.enable
 {
 	my.ddcci.enable = true;
 	security.pam.services.hyprlock = {};
+	environment.systemPackages = with pkgs; [ libnotify ];
 	home-manager.users."${config.my.user.username}" =
 	{
-		home.packages = with pkgs; [ libnotify ];
 		services.hypridle =
 		{
 			enable = true;
@@ -38,4 +38,5 @@ config = lib.mkIf config.my.hyprland.enable
 		};
 	};
 };
+
 }

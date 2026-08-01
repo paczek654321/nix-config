@@ -1,12 +1,9 @@
 { config, lib, pkgs, ... }:
-let
-	username = config.my.user.username;
-in
 {
 
 config = lib.mkIf config.my.hyprland.enable
 {
-	home-manager.users."${username}".home.packages = with pkgs;
+	environment.systemPackages = with pkgs;
 	[
 		hyprshot
 		hyprpicker
