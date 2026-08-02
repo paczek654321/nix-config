@@ -57,6 +57,11 @@ in
 		keymap = "pl";
 		consoleKeymap = "pl2";
 	};
+	
+	fonts.packages = with pkgs;
+	[
+		nerd-fonts.symbols-only
+	];
 
 	environment.systemPackages = with pkgs;
 	[
@@ -92,8 +97,6 @@ in
 		steam-run
 		openssl
 		jq
-
-		nerd-fonts.symbols-only
 	];
 
 	my.user =
