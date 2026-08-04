@@ -95,6 +95,7 @@ in
 
 		cryptsetup
 		steam-run
+		appimage-run
 		openssl
 		jq
 	];
