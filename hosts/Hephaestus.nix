@@ -78,4 +78,10 @@ in
 	};
 
 	my.vscodium.settings.workbench.colorTheme = "Sweet Dracula Monokai";
+
+	my.unreal-engine =
+	{
+		enable = true;
+		enginePath = "/home/paczek/data/appdata/UnrealEngine/Linux_Unreal_Engine_5.8.1";
+	};
 }

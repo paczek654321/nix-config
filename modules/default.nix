@@ -33,5 +33,6 @@
 		./steam
 		./modrinth
 		./syncthing
+		./unreal-engine
 	];
 }

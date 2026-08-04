@@ -31,6 +31,12 @@ inputs =
     	url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     	inputs.nixpkgs.follows = "nixpkgs";
     };
+
+	unreal =
+	{
+		url = "github:paczek654321/NixOSUnreal";
+    	inputs.nixpkgs.follows = "nixpkgs";
+	};
 };
 
 nixConfig =

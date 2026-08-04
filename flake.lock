@@ -198,7 +198,8 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-git": "nixpkgs-git",
         "nixpkgs-old": "nixpkgs-old",
-        "noctalia": "noctalia"
+        "noctalia": "noctalia",
+        "unreal": "unreal"
       }
     },
     "systems": {
@@ -235,6 +236,26 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "unreal": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785885057,
+        "narHash": "sha256-D2hGSknWaIje2FiWFWhAOEzLT9tbGwccGyEqT7fS8X0=",
+        "owner": "paczek654321",
+        "repo": "NixOSUnreal",
+        "rev": "8bbf9bd8fd8bd52e415f50086ace701159487c3d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "paczek654321",
+        "repo": "NixOSUnreal",
         "type": "github"
       }
     }
