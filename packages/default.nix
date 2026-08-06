@@ -64,6 +64,8 @@ nixpkgs.overlays =
 			export-template-mono = final.godotPackages_4_5.godot-mono.export-template;
 		};
 
+		grayjay-18 = final.callPackage ./grayjay-18 {};
+
 		cool-dark-icons = final.callPackage ./cool-dark-icons.nix {};
 		sours-full-color = final.callPackage ./sours-full-color.nix {};
 		beauty-solar = final.callPackage ./beauty-solar.nix {};

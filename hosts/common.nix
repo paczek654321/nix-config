@@ -71,6 +71,8 @@ in
 		kdePackages.okular
 		kdePackages.isoimagewriter
 		kdePackages.filelight
+
+		grayjay-18
 		
 		vlc
 		xfburn
