@@ -129,6 +129,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-jetbrains": {
+      "locked": {
+        "lastModified": 1785314904,
+        "narHash": "sha256-D7u29L6oWGfPxmUegFxUSUdc0FdjfcjBRZLUZtdIdPM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "eadd6f50ffdfa3dca52328e43068ec13d63fdfa3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "refs/pull/546636/head",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-old": {
       "locked": {
         "lastModified": 1773125890,
@@ -197,6 +213,7 @@
         "millennium": "millennium",
         "nixpkgs": "nixpkgs",
         "nixpkgs-git": "nixpkgs-git",
+        "nixpkgs-jetbrains": "nixpkgs-jetbrains",
         "nixpkgs-old": "nixpkgs-old",
         "noctalia": "noctalia",
         "unreal": "unreal"
@@ -246,11 +263,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785885057,
-        "narHash": "sha256-D2hGSknWaIje2FiWFWhAOEzLT9tbGwccGyEqT7fS8X0=",
+        "lastModified": 1786155352,
+        "narHash": "sha256-KLqMZMqrvfu9R3G0aT5Fhuy6awB45tQkXDVPgGUSoXk=",
         "owner": "paczek654321",
         "repo": "NixOSUnreal",
-        "rev": "8bbf9bd8fd8bd52e415f50086ace701159487c3d",
+        "rev": "4b7ec0d12fc40bf411295164aee5bfd5303285a5",
         "type": "github"
       },
       "original": {

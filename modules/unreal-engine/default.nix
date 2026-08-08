@@ -1,7 +1,8 @@
 {lib, config, pkgs, inputs, ...}:
 let
 	enginePath = config.my.unreal-engine.enginePath;
-	runUnreal = inputs.unreal.packages.${pkgs.system}.run-unreal;
+	runUnreal = inputs.unreal.packages.${pkgs.stdenv.hostPlatform.system}.run-unreal;
+	unrealFHS = inputs.unreal.packages.${pkgs.stdenv.hostPlatform.system}.default;
 	
 	executable = pkgs.writeShellScriptBin "unreal-editor"
 	''
@@ -19,6 +20,8 @@ let
 in
 {
 
+imports = [ ./rider.nix ];
+
 options.my.unreal-engine =
 {
 	enable = lib.mkEnableOption "Enable Unreal Engine";
@@ -31,10 +34,13 @@ options.my.unreal-engine =
 
 config = lib.mkIf config.my.unreal-engine.enable
 {
+	_module.args = { inherit unrealFHS; };
+
 	environment.systemPackages =
 	[
 		executable
 		desktopItem
+		unrealFHS
 	];
 };
 

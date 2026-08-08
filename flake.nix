@@ -7,6 +7,7 @@ inputs =
 	nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 	nixpkgs-old.url = "github:NixOS/nixpkgs/78173555c5d16bee8ab97ce9ef1d257d5657b442";
 	nixpkgs-git.url = "github:nixos/nixpkgs/master";
+	nixpkgs-jetbrains.url = "github:nixos/nixpkgs/refs/pull/546636/head";
 
 	home-manager =
 	{
@@ -58,7 +59,12 @@ let
 		inherit system;
 		config.allowUnfree = true;
   	};
-	specialArgs = { inherit inputs pkgsOld pkgsGit; };
+	pkgsJetbrains = import inputs.nixpkgs-jetbrains
+	{
+		inherit system;
+		config.allowUnfree = true;
+  	};
+	specialArgs = { inherit inputs pkgsOld pkgsGit pkgsJetbrains; };
 in
 {
 	nixosConfigurations.Hephaestus = nixpkgs.lib.nixosSystem
