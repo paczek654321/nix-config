@@ -83,6 +83,6 @@ in
 	{
 		enable = true;
 		IDE.rider = true;
-		enginePath = "/home/paczek/data/appdata/UnrealEngine/Linux_Unreal_Engine_5.8.1";
+		enginePath = "/home/paczek/data/appdata/UnrealEngine/Linux_Unreal_Engine_5.7.4";
 	};
 }
