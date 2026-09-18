@@ -110,7 +110,6 @@ config = lib.mkIf config.my.hyprland.enable
 			"match:class ^org\.kde\.dolphin$, opacity 0.75 override"
 			"tile on, match:title .*Godot.*"
 			"tile on, match:class Unity"
-			"tile on, match:class steam"
 		];
 	};
 };
