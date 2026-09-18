@@ -1,0 +1,4 @@
+[filter "noctalia"]
+    clean = python3 .git-tools/clean-noctalia.py
+    smudge = cat
+    required = true
