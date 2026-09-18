@@ -42,6 +42,16 @@ config = lib.mkIf config.my.unreal-engine.enable
 		desktopItem
 		unrealFHS
 	];
+
+	my.hyprland.settings.windowrule = lib.mkIf config.my.hyprland.enable
+	[
+		{
+			name = "fix-unreal-tooltips";
+			"match:class" = "UnrealEditor";
+			"match:initial_title" = "^$";
+			no_focus = true;
+		}
+	];
 };
 
 }
