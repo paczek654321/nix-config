@@ -161,7 +161,9 @@ in
 			{
 				name = "paczek654321";
 				email = "paczek1024@proton.me";
+				signingkey = "A1EDC8D0AD0F17BF";
 			};
+			commit.gpgsign = true;
 		};
 	};
 
