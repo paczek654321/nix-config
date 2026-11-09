@@ -115,32 +115,16 @@
     },
     "nixpkgs-git": {
       "locked": {
-        "lastModified": 1785598418,
-        "narHash": "sha256-y/BsOTlglzXeMRLQvvKNA1lOIFtIG5G+dLqfmURuGUY=",
+        "lastModified": 1792049396,
+        "narHash": "sha256-3knZuHRaVwJvAqqt9Ms+jwZJA37AZzPwy90RBoviCNc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4fdb34f68a60dd1d0a0766af8a773b9c198979d3",
+        "rev": "9eff724fc2b72ee1e4d8d074307c4b09dcfef7dd",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-jetbrains": {
-      "locked": {
-        "lastModified": 1785314904,
-        "narHash": "sha256-D7u29L6oWGfPxmUegFxUSUdc0FdjfcjBRZLUZtdIdPM=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "eadd6f50ffdfa3dca52328e43068ec13d63fdfa3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "refs/pull/546636/head",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -213,7 +197,6 @@
         "millennium": "millennium",
         "nixpkgs": "nixpkgs",
         "nixpkgs-git": "nixpkgs-git",
-        "nixpkgs-jetbrains": "nixpkgs-jetbrains",
         "nixpkgs-old": "nixpkgs-old",
         "noctalia": "noctalia",
         "unreal": "unreal"
