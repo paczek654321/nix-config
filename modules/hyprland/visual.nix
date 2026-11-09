@@ -87,10 +87,6 @@ config = lib.mkIf config.my.hyprland.enable
 			# If true disables the random hyprland logo / anime girl background. :(
 			disable_hyprland_logo = false;
 		};
-		layerrule =
-		[
-			"match:namespace wofi, blur on"
-		];
 		windowrule =
 		[
 			# Ignore maximize requests from all apps. You'll probably like this.

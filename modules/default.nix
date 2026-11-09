@@ -7,8 +7,6 @@
 		./platform-theme
 		./user
 		./hyprland
-		./waybar
-		./wofi
 		./ssh
 		./git
 		./bash
@@ -22,7 +20,6 @@
 		./kde-partition-manager
 		./kitty
 		./easyeffects
-		./iwd
 		./locale
 		./dolphin
 		./vsftpd
