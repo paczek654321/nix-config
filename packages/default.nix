@@ -12,14 +12,6 @@ nixpkgs.overlays =
 			qt6ct = inputs.ilya-fedin.packages.${prev.stdenv.hostPlatform.system}.qt6ct;
 		};
 
-		superfile = prev.superfile.overrideAttrs (old:
-		{
-			patches = (old.patches or []) ++
-			[
-				./superfile.patch
-			];
-		});
-
 		piper-git = prev.piper.overrideAttrs (old:
 		{
 			src = prev.fetchFromGitHub
