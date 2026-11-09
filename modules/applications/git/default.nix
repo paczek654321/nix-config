@@ -12,21 +12,18 @@ in
 
 	config = lib.mkIf config.my.git.enable
 	{
-		home-manager.users."${username}" = hm:
-		let
-			mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
-		in
+		my.symlinks =
+		[
+			{
+				source = "/data/.git-credentials";
+				destination = ".git-credentials";
+			}
+		];
+		
+		home-manager.users."${username}".programs.git =
 		{
-
-			home.file =
-			{
-				".git-credentials".source = mkOutOfStoreSymlink "/data/.git-credentials";
-			};
-			programs.git =
-			{
-				enable = true;
-				settings.credential.helper = "store";
-			};
+			enable = true;
+			settings.credential.helper = "store";
 		};
 		
 		programs.gnupg.agent.enable = true;

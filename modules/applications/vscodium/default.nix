@@ -26,13 +26,18 @@ config = lib.mkIf config.my.vscodium.enable
 	[
 		(pkgs.writeShellScriptBin "code" ''exec codium "$@"'')
 	];
-	home-manager.users."${username}" = hm:
-	let
-		mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
-	in
+
+	my.symlinks =
+	[
+		{
+			source = "/data/appdata/vsc-extensions";
+			destination = ".vscode-oss/extensions";
+		}
+	];
+
+	home-manager.users."${username}" =
 	{
 		programs.vscodium.enable = true;
-		home.file.".vscode-oss/extensions".source = mkOutOfStoreSymlink "/data/appdata/vsc-extensions";
 		home.file.".config/VSCodium/User/settings.json".text = builtins.toJSON config.my.vscodium.settings;
 	};
 };

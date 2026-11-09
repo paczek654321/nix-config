@@ -61,21 +61,17 @@ in
 		};
 	};
 
-	my.backups =
-	{
-		enable = true;
-		files =
-		[
-			{
-				source = "/data/appdata/Terraria";
-				destination = ".local/share/Terraria";
-			}
-			{
-				source = "/data/appdata/UnityEditor";
-				destination = "/home/paczek/Unity/Hub/Editor";
-			}
-		];
-	};
+	my.symlinks =
+	[
+		{
+			source = "/data/appdata/Terraria";
+			destination = ".local/share/Terraria";
+		}
+		{
+			source = "/data/appdata/UnityEditor";
+			destination = "/home/paczek/Unity/Hub/Editor";
+		}
+	];
 
 	my.vscodium.settings.workbench.colorTheme = "Sweet Dracula Monokai";
 

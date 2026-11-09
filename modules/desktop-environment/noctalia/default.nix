@@ -30,11 +30,17 @@ config = lib.mkIf config.my.noctalia.enable
 	};
 
 	my.hyprland.settings.exec-once = lib.mkIf config.my.hyprland.enable ["noctalia-shell"];
+	
+	# Allow imperative configuration while still tracking the config in the flake git repo
+	my.symlinks = lib.mkIf (cfg.settingsFile != null)
+	[
+		{
+			source = cfg.settingsFile;
+			destination = ".config/noctalia/settings.json";
+		}
+	];
 
-	home-manager.users."${username}" = hm:
-	let
-		mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
-	in
+	home-manager.users."${username}" =
 	{
 		imports =
 		[
@@ -42,8 +48,6 @@ config = lib.mkIf config.my.noctalia.enable
 		];
 
 		programs.noctalia-shell.enable = true;
-		# Allow imperative configuration while still tracking the config in the flake git repo
-		home.file.".config/noctalia/settings.json".source = lib.mkIf (cfg.settingsFile != null) (mkOutOfStoreSymlink cfg.settingsFile);
 	};
 
 	my.platform-theme = lib.mkIf config.my.platform-theme.enable

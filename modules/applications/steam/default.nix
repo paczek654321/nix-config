@@ -7,18 +7,21 @@ config = lib.mkIf config.my.steam.enable
 {
 	nixpkgs.overlays = [ inputs.millennium.overlays.default ];
 
-	home-manager.users."${config.my.user.username}" = hm:
-	let
-		mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
-	in
-	{
-		home.file =
+	my.symlinks =
+	[
 		{
-			".local/share/millennium/plugins".source = mkOutOfStoreSymlink "/data/appdata/Millennium/plugins";
-			".local/share/Steam/millennium/themes".source = mkOutOfStoreSymlink "/data/appdata/Millennium/themes";
-			".config/millennium".source = mkOutOfStoreSymlink "/data/appdata/Millennium/config";
-		};
-	};
+			source = "/data/appdata/Millennium/plugins";
+			destination = ".local/share/millennium/plugins";
+		}
+		{
+			source = "/data/appdata/Millennium/themes";
+			destination = ".local/share/Steam/millennium/themes";
+		}
+		{
+			source = "/data/appdata/Millennium/config";
+			destination = ".config/millennium";
+		}
+	];
 
 	programs.steam =
 	{

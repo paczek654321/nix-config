@@ -14,14 +14,18 @@ options.my.godot =
 
 config = lib.mkIf config.my.godot.enable
 {
-	home-manager.users."${config.my.user.username}" = hm:
-	let
-		mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
-	in
-	{
-		home.file.".local/share/godot".source = mkOutOfStoreSymlink "/data/appdata/Godot/share";
-		home.file.".config/godot".source = mkOutOfStoreSymlink "/data/appdata/Godot/config";
-	};
+	my.symlinks =
+	[
+		{
+			source = "/data/appdata/Godot/share";
+			destination = ".local/share/godot";
+		}
+		{
+			source = "/data/appdata/Godot/config";
+			destination = ".config/godot";
+		}
+	];
+
 	environment.systemPackages =
 	let
 		devPackages = if config.my.godot.enableDevPackages then (with pkgs;

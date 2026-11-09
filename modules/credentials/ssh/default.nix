@@ -4,15 +4,12 @@
 
 	config = lib.mkIf config.my.ssh.enable
 	{
-		home-manager.users."${config.my.user.username}" = hm:
-		let
-			mkOutOfStoreSymlink = hm.config.lib.file.mkOutOfStoreSymlink;
-		in
-		{
-			home.file =
+		my.symlinks =
+		[
 			{
-				".ssh".source = mkOutOfStoreSymlink "/data/.ssh";
-			};
-		};
+				source = "/data/.ssh";
+				destination = ".ssh";
+			}
+		];
 	};
 }
