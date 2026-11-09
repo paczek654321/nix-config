@@ -69,12 +69,11 @@ nixpkgs.overlays =
 			'';
 		});
 
-		grayjay-18 = final.callPackage ./grayjay-18 {};
-
-		cool-dark-icons = final.callPackage ./cool-dark-icons.nix {};
-		sours-full-color = final.callPackage ./sours-full-color.nix {};
-		beauty-solar = final.callPackage ./beauty-solar.nix {};
-		soundux = final.callPackage ./soundux.nix {};
+		grayjay-18 = final.callPackage ./_grayjay-18 {};
+		cool-dark-icons = final.callPackage ./_cool-dark-icons.nix {};
+		sours-full-color = final.callPackage ./_sours-full-color.nix {};
+		beauty-solar = final.callPackage ./_beauty-solar.nix {};
+		soundux = final.callPackage ./_soundux.nix {};
 	})
 ];
 

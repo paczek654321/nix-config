@@ -68,7 +68,6 @@ in
 		inherit system specialArgs;
 		modules =
 		[
-			./packages
 			(inputs.import-tree ./modules)
 			./hosts/Hephaestus.nix
 		];
@@ -78,7 +77,6 @@ in
 		inherit system specialArgs;
 		modules =
 		[
-			./packages
 			(inputs.import-tree ./modules)
 			./hosts/Loviatar.nix
 		];
