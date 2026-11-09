@@ -60,7 +60,7 @@ let
 		inherit system;
 		config.allowUnfree = true;
   	};
-	specialArgs = { inherit inputs pkgsOld pkgsGit; };
+	specialArgs = { inherit self inputs pkgsOld pkgsGit; };
 in
 {
 	nixosConfigurations.Hephaestus = nixpkgs.lib.nixosSystem
