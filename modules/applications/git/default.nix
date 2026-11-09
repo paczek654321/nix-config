@@ -26,6 +26,6 @@ in
 			settings.credential.helper = "store";
 		};
 		
-		programs.gnupg.agent.enable = true;
+		my.gpg.enable = true;
 	};
 }
