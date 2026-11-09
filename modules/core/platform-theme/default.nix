@@ -7,7 +7,7 @@ in
 
 options.my.platform-theme =
 {
-	enable = lib.mkEnableOption "Enable system theming";
+	enableGUIToolkitTheming = lib.mkEnableOption "Enable system theming";
 	colorPalette = lib.mkOption
 	{
 		type = lib.types.submodule
@@ -101,7 +101,7 @@ options.my.platform-theme =
     };
 };
 
-config = lib.mkIf config.my.platform-theme.enable
+config = lib.mkIf config.my.platform-theme.enableGUIToolkitTheming
 {
 	home-manager.users."${username}" =
 	{

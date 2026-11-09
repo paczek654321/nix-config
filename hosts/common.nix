@@ -51,7 +51,6 @@ in
 
 	my.locale =
 	{
-		enable = true;
 		defaultLocale = "en_US.UTF-8";
 		dataLocale = "pl_PL.UTF-8";
 		keymap = "pl";
@@ -102,11 +101,7 @@ in
 		jq
 	];
 
-	my.user =
-	{
-		enable = true;
-		username = "paczek";
-	};
+	my.user.username = "paczek";
 
 	my.vsftpd.enable = true;
 
@@ -205,7 +200,7 @@ in
 
 	my.platform-theme = lib.mkDefault
 	{
-		enable = true;
+		enableGUIToolkitTheming = true;
 		font_size = 11;
 		default_font = "Adwaita Sans";
 		monospace_font = "Adwaita Mono";

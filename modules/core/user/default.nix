@@ -11,7 +11,6 @@ imports =
 
 options.my.user =
 {
-	enable = lib.mkEnableOption "User configuration via home manager";
 	username = lib.mkOption
 	{
 		type = lib.types.str;
@@ -20,7 +19,7 @@ options.my.user =
 	};
 };
 
-config = lib.mkIf config.my.user.enable
+config =
 {
 	users.users."${username}" =
 	{

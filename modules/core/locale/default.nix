@@ -3,7 +3,6 @@
 
 options.my.locale =
 {
-	enable = lib.mkEnableOption "Enable locale";
 	defaultLocale = lib.mkOption
 	{
 		type = lib.types.str;
@@ -32,7 +31,7 @@ options.my.locale =
 	};
 };
 
-config = lib.mkIf config.my.locale.enable
+config =
 {
 	i18n =
 	{

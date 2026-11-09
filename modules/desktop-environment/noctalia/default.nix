@@ -50,7 +50,7 @@ config = lib.mkIf config.my.noctalia.enable
 		programs.noctalia-shell.enable = true;
 	};
 
-	my.platform-theme = lib.mkIf config.my.platform-theme.enable
+	my.platform-theme = lib.mkIf config.my.platform-theme.enableGUIToolkitTheming
 	{
 		qt_colorscheme_path = "/home/${username}/.local/share/color-schemes/noctalia.colors";
 	};
