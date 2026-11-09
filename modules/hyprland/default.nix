@@ -6,13 +6,6 @@ in
 
 imports =
 [
-	./workspaces.nix
-	./visual.nix
-	./input.nix
-	./binds.nix
-	./xdgmenu.nix
-	./xdg-desktop-portal.nix
-
 	(lib.mkAliasOptionModule [ "my" "hyprland" "settings" ] [ "home-manager" "users" username "wayland" "windowManager" "hyprland" "settings" ] )
 ];
 

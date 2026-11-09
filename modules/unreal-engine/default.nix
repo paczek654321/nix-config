@@ -20,8 +20,6 @@ let
 in
 {
 
-imports = [ ./rider.nix ];
-
 options.my.unreal-engine =
 {
 	enable = lib.mkEnableOption "Enable Unreal Engine";

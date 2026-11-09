@@ -8,6 +8,8 @@ inputs =
 	nixpkgs-old.url = "github:NixOS/nixpkgs/78173555c5d16bee8ab97ce9ef1d257d5657b442";
 	nixpkgs-git.url = "github:nixos/nixpkgs/master";
 
+	import-tree.url = "github:denful/import-tree";
+
 	home-manager =
 	{
 		 url = "github:nix-community/home-manager";
@@ -67,7 +69,7 @@ in
 		modules =
 		[
 			./packages
-			./modules
+			(inputs.import-tree ./modules)
 			./hosts/Hephaestus.nix
 		];
 	};
@@ -77,7 +79,7 @@ in
 		modules =
 		[
 			./packages
-			./modules
+			(inputs.import-tree ./modules)
 			./hosts/Loviatar.nix
 		];
 	};

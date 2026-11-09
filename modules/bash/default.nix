@@ -5,8 +5,6 @@ in
 {
 	imports =
 	[
-		./prompt.nix
-
 		(lib.mkAliasOptionModule [ "my" "bash" "settings" ] [ "home-manager" "users" username "programs" "bash" ] )
 	];
 	options.my.bash.enable = lib.mkEnableOption "Enable BASH";

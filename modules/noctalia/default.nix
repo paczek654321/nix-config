@@ -5,8 +5,6 @@ let
 in
 {
 
-imports = [ ./hyprland.nix ];
-
 options.my.noctalia =
 {
 	enable = lib.mkEnableOption "Enable Noctalia";

@@ -57,6 +57,21 @@
         "type": "github"
       }
     },
+    "import-tree": {
+      "locked": {
+        "lastModified": 1788467110,
+        "narHash": "sha256-ljEMTXP/rH0tOvDzc9gzwww6KcHRPRnEHzd9lK48V7s=",
+        "owner": "denful",
+        "repo": "import-tree",
+        "rev": "eb1b52eaecc57f7c136d07ae8a93e724dfecac46",
+        "type": "github"
+      },
+      "original": {
+        "owner": "denful",
+        "repo": "import-tree",
+        "type": "github"
+      }
+    },
     "millennium": {
       "inputs": {
         "millennium-src": "millennium-src",
@@ -194,6 +209,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "ilya-fedin": "ilya-fedin",
+        "import-tree": "import-tree",
         "millennium": "millennium",
         "nixpkgs": "nixpkgs",
         "nixpkgs-git": "nixpkgs-git",
