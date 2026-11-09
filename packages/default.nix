@@ -64,6 +64,19 @@ nixpkgs.overlays =
 			export-template-mono = final.godotPackages_4_5.godot-mono.export-template;
 		};
 
+		# Fixes il2cpp related issues
+		unityhub = (prev.unityhub.override
+		{
+			extraPkgs = p: [ p.ncurses ];
+		}).overrideAttrs (old:
+		{
+			postInstall = (old.postInstall or "") +
+			''
+				sed -i '1i export LD_LIBRARY_PATH=/lib''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}' \
+  					"$out/opt/unityhub/unityhub"
+			'';
+		});
+
 		grayjay-18 = final.callPackage ./grayjay-18 {};
 
 		cool-dark-icons = final.callPackage ./cool-dark-icons.nix {};
