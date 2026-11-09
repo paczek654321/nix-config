@@ -445,7 +445,7 @@
         "firstDayOfWeek": 1,
         "hideWeatherCityName": true,
         "hideWeatherTimezone": false,
-        "name": "REDACTED",
+        "name": "Kielno",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
@@ -656,7 +656,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/data",
+        "directory": "/home/paczek/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [

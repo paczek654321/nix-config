@@ -11,7 +11,7 @@ options.my.noctalia =
 	settingsFile = lib.mkOption
 	{
 		type = lib.types.nullOr lib.types.str;
-		default = "/data/.nixos/modules/noctalia/settings.json";
+		default = "/data/.nixos/${config.my.util.relPath ./.}/settings.json";
 		description = "Path to the out of store config file. Set to null in order to disable imperative configuration.";
 	};
 };
