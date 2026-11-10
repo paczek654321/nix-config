@@ -31,7 +31,6 @@ in
 
 	my.hyprland =
 	{
-		enable = true;
 		workspaces.monitors =
 		[
 			"DP-1"

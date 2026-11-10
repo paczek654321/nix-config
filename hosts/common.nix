@@ -193,7 +193,7 @@ in
 
 	my.hyprland =
 	{
-		enable = true;
+		enable = false;
 		settings.bind = [ "$mainMod, 2, exec, ${lib.getExe pkgs.kitty}" ];
 	};
 	
