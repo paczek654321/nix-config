@@ -1,7 +1,8 @@
-{ config, lib, inputs, ... }:
+{ config, lib, inputs, self, ... }:
 let
 	cfg = config.my.noctalia;
 	username = config.my.user.username;
+	relPath = path: lib.strings.removePrefix "${self}/" (toString path);
 in
 {
 
@@ -11,7 +12,7 @@ options.my.noctalia =
 	settingsFile = lib.mkOption
 	{
 		type = lib.types.nullOr lib.types.str;
-		default = "/data/.nixos/${config.my.util.relPath ./.}/settings.json";
+		default = "/data/.nixos/${relPath ./.}/settings.json";
 		description = "Path to the out of store config file. Set to null in order to disable imperative configuration.";
 	};
 };
@@ -28,8 +29,6 @@ config = lib.mkIf config.my.noctalia.enable
 		enable = true;
 		withBlueman = false;
 	};
-
-	my.hyprland.settings.exec-once = lib.mkIf config.my.hyprland.enable ["noctalia-shell"];
 	
 	# Allow imperative configuration while still tracking the config in the flake git repo
 	my.symlinks = lib.mkIf (cfg.settingsFile != null)
@@ -48,11 +47,6 @@ config = lib.mkIf config.my.noctalia.enable
 		];
 
 		programs.noctalia-shell.enable = true;
-	};
-
-	my.platform-theme = lib.mkIf config.my.platform-theme.enableGUIToolkitTheming
-	{
-		qt_colorscheme_path = "/home/${username}/.local/share/color-schemes/noctalia.colors";
 	};
 };
 

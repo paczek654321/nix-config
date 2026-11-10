@@ -62,7 +62,7 @@ options.my.bash.prompt =
 	};
 };
 
-config = lib.mkIf config.my.bash.prompt.enable
+config = lib.mkIf (config.my.bash.enable && config.my.bash.prompt.enable)
 {
 	home-manager.users."${config.my.user.username}" =
 	{

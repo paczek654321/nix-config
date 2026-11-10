@@ -6,6 +6,8 @@ config = lib.mkIf (config.my.noctalia.enable && config.my.hyprland.enable)
 	my.hyprland.enableHyprpaper = false;
 	my.hyprland.settings =
 	{
+		exec-once = [ "noctalia-shell" ];
+
 		bind =
 		[
 			"$mainMod, 1, exec, noctalia-shell ipc call launcher toggle"

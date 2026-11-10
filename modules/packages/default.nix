@@ -1,4 +1,4 @@
-{ pkgs, pkgsOld, inputs, ... }:
+{ pkgs, pkgsOld, pkgsGit, inputs, ... }:
 {
 
 nixpkgs.overlays = 
@@ -68,6 +68,15 @@ nixpkgs.overlays =
   					"$out/opt/unityhub/unityhub"
 			'';
 		});
+		
+		jetbrains = prev.jetbrains //
+		{
+			rider = pkgsGit.jetbrains.rider;
+			rider-icons = prev.runCommand "rider-icons" {} ''
+				mkdir -p $out/share
+				ln -s ${pkgsGit.jetbrains.rider}/share/icons $out/share/icons
+			'';
+		};
 
 		grayjay-18 = final.callPackage ./_grayjay-18 {};
 		cool-dark-icons = final.callPackage ./_cool-dark-icons.nix {};

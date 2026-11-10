@@ -116,7 +116,6 @@ config = lib.mkIf config.my.platform-theme.enableGUIToolkitTheming
 
 			gtk.enable = true;
 			x11.enable = true;
-			hyprcursor.enable = true;
 		};
 		
 		qt =
