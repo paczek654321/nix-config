@@ -1,52 +1,42 @@
-{ config, lib, inputs, self, ... }:
+{ config, lib, inputs, self, pkgs, ... }:
 let
-	cfg = config.my.noctalia;
 	username = config.my.user.username;
-	relPath = path: lib.strings.removePrefix "${self}/" (toString path);
 in
 {
 
-options.my.noctalia =
-{
-	enable = lib.mkEnableOption "Enable Noctalia";
-	settingsFile = lib.mkOption
-	{
-		type = lib.types.nullOr lib.types.str;
-		default = "/data/.nixos/${relPath ./.}/settings.json";
-		description = "Path to the out of store config file. Set to null in order to disable imperative configuration.";
-	};
-};
+imports = [ inputs.noctalia.nixosModules.default ];
 
-config = lib.mkIf config.my.noctalia.enable
+config =
 {
-	networking.networkmanager.enable = true;
-	users.users."${username}".extraGroups = [ "networkmanager" ];
-	services.power-profiles-daemon.enable = true;
-	services.upower.enable = true;
-
-	my.bluetooth =
+	programs.noctalia =
 	{
 		enable = true;
-		withBlueman = false;
+		recommendedServices.enable = true;
 	};
-	
-	# Allow imperative configuration while still tracking the config in the flake git repo
-	my.symlinks = lib.mkIf (cfg.settingsFile != null)
-	[
-		{
-			source = cfg.settingsFile;
-			destination = ".config/noctalia/settings.json";
-		}
-	];
 
-	home-manager.users."${username}" =
+	hardware.bluetooth.settings =
 	{
-		imports =
-		[
-			inputs.noctalia.homeModules.default
-		];
+		General.Experimental = true;
+		Policy.AutoEnable = true;
+	};
 
-		programs.noctalia-shell.enable = true;
+	services.ddccontrol =
+	{
+		enable = true;
+		package = pkgs.ddcutil;
+	};
+
+	users.users."${username}".extraGroups = [ "networkmanager" "i2c" ];
+
+	home-manager.users.${username} =
+	{
+		imports = [ inputs.noctalia.homeModules.default ];
+
+		programs.noctalia =
+		{
+			enable = true;
+			settings = ./config.toml;
+		};
 	};
 };
 

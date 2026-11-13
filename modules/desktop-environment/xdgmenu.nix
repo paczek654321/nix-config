@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
 
-config = lib.mkIf config.my.hyprland.enable
+config =
 {
 	environment.etc."xdg/menus/applications.menu".text =
 	''

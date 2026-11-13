@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
 
-config = lib.mkIf config.my.hyprland.enable
+config =
 {
 	xdg.portal =
 	{
@@ -9,11 +9,11 @@ config = lib.mkIf config.my.hyprland.enable
 		xdgOpenUsePortal = true;
 		config =
 		{
-			hyprland =
+			umbriel =
 			{
 				default =
 				[
-					"hyprland"
+					"umbriel"
 					"kde"
 					"gtk"
 				];
@@ -23,7 +23,6 @@ config = lib.mkIf config.my.hyprland.enable
 		extraPortals = with pkgs;
 		[
 			kdePackages.xdg-desktop-portal-kde
-			xdg-desktop-portal-hyprland
 			xdg-desktop-portal-gtk
 		];
 	};

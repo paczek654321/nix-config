@@ -52,7 +52,7 @@ in
 	my.locale =
 	{
 		defaultLocale = "en_US.UTF-8";
-		dataLocale = "pl_PL.UTF-8";
+		dataLocale = "en_DK.UTF-8";
 		keymap = "pl";
 		consoleKeymap = "pl2";
 	};
@@ -190,12 +190,7 @@ in
 	my.piper-git.enable = true;
 	my.steam.enable = true;
 	my.syncthing.enable = true;
-
-	my.hyprland =
-	{
-		enable = false;
-		settings.bind = [ "$mainMod, 2, exec, ${lib.getExe pkgs.kitty}" ];
-	};
+	my.hyprpicker.enable = true;
 	
 
 	my.platform-theme = lib.mkDefault
@@ -210,8 +205,6 @@ in
 		cursor_pkg = pkgs.kdePackages.breeze;
 	};
 
-	my.noctalia.enable = true;
-	my.wl-clip-persist.enable = true;
 	services.displayManager.ly.enable = true;
 
 	home-manager.backupFileExtension = "hm-backup";

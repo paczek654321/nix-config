@@ -28,9 +28,15 @@ inputs =
     	inputs.nixpkgs.follows = "nixpkgs";
     };
 
+	umbriel-accent-gradient =
+	{
+		url = "github:paczek654321/umbriel-accent-gradient";
+		inputs.nixpkgs.follows = "nixpkgs";
+	};
+
 	noctalia =
 	{
-    	url = "github:noctalia-dev/noctalia/legacy-v4";
+    	url = "github:noctalia-dev/noctalia";
     	inputs.nixpkgs.follows = "nixpkgs";
     };
 

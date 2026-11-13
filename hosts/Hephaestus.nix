@@ -29,19 +29,18 @@ in
 		})
 	];
 
-	my.hyprland =
+	my.umbriel.output =
 	{
-		workspaces.monitors =
-		[
-			"DP-1"
-			"DP-2"
-		];
-		settings.monitor =
-		[
-			"DP-1, highrr, auto-right, 1"
-			"DP-2, highrr, auto-left, 1"
-			"HDMI-A-1, disable"
-		];
+		"DP-1" =
+		{
+			mode = "2560x1440@165.080";
+		};
+
+		"DP-2" =
+		{
+			mode = "2560x1440@165.080";
+			position = [0 0];
+		};
 	};
 
 	my.platform-theme = lib.mkDefault

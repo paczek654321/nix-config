@@ -41,19 +41,18 @@ in
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 
-	my.hyprland =
+	my.umbriel.output =
 	{
-		workspaces =
+		"eDP-1" =
 		{
-			monitors = [ "eDP-1" ];
-			workspaceSwitchPrefix = "";
+			mode = "2560x1440@165.080";
+			position = [0 0];
 		};
-		
-		settings.monitor =
-		[
-			"eDP-1, highrr, auto, 1"
-			"HDMI-A-1, highrr, auto, 1, mirror, eDP-1"
-		];
+
+		"HDMI-A-1" =
+		{
+			mode = "";
+		};
 	};
 
 	my.platform-theme = lib.mkDefault
