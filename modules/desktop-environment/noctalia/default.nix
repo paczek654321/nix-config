@@ -1,4 +1,4 @@
-{ config, lib, inputs, self, pkgs, ... }:
+{ config, lib, inputs, pkgs, ... }:
 let
 	username = config.my.user.username;
 in
@@ -32,11 +32,7 @@ config =
 	{
 		imports = [ inputs.noctalia.homeModules.default ];
 
-		programs.noctalia =
-		{
-			enable = true;
-			settings = ./config.toml;
-		};
+		programs.noctalia = { enable = true; };
 	};
 };
 
