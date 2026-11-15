@@ -9,8 +9,8 @@ let
 	in
 	if dimensions == null then
 	{
-		width = 0;
-		height = 0;
+		width = 1280;
+		height = 720;
 	}
 	else
 	{
