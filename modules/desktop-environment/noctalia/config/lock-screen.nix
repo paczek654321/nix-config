@@ -2,6 +2,21 @@
 let
 	username = config.my.user.username;
 	monitors = builtins.attrNames config.my.umbriel.output;
+	get_dimensions = monitor:
+	let
+		mode = config.my.umbriel.output.${monitor}.mode;
+		dimensions = builtins.match "([0-9]+)x([0-9]+)@.*" mode;
+	in
+	if dimensions == null then
+	{
+		width = 0;
+		height = 0;
+	}
+	else
+	{
+		width = builtins.fromJSON (builtins.elemAt dimensions 0);
+		height = builtins.fromJSON (builtins.elemAt dimensions 1);
+	};
 in
 {
 
@@ -26,17 +41,20 @@ config =
 				visible = true;
 			};
 
-			widget = builtins.foldl' (acc: monitor: acc //
+			widget = builtins.foldl' (acc: monitor:
+			let
+				dimensions = get_dimensions monitor;
+			in acc //
 			{
 				"lockscreen-login-box@${monitor}" =
 				{
-					box_height = 70.0;
-					box_width = 400.0;
-					cx = 1280.0;
-					cy = 735.0;
+					box_height = 0.05 * dimensions.height;
+					box_width = 0.0;
+					cx = 0.5 * dimensions.width;
+					cy = 0.55 * dimensions.height;
 					output = monitor;
-					placement_height = 1440.0;
-					placement_width = 2560.0;
+					placement_height = dimensions.height;
+					placement_width = dimensions.width;
 					rotation = 0.0;
 					type = "login_box";
 					settings =
@@ -62,13 +80,13 @@ config =
 
 				"clock@${monitor}" =
 				{
-					box_height = 0.0;
+					box_height = 0.05 * dimensions.height;
 					box_width = 0.0;
-					cx = 1280.0;
-					cy = 640.0;
+					cx = 0.5 * dimensions.width;
+					cy = 0.45 * dimensions.height;
 					output = monitor;
-					placement_height = 1440.0;
-					placement_width = 2560.0;
+					placement_height = dimensions.height;
+					placement_width = dimensions.width;
 					rotation = 0.0;
 					type = "clock";
 					settings = {
