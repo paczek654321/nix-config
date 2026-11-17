@@ -172,6 +172,7 @@ in
 				tabSize = 4;
 				insertSpaces = false;
 				detectIndentation = false;
+				fontFamily = "Symbols Nerd Font, ${config.my.platform-theme.monospace_font}";
 			};
 			"[nix]".editor = config.my.vscodium.settings.editor;
 		};
