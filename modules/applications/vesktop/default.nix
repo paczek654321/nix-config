@@ -125,33 +125,26 @@ config = lib.mkIf config.my.vesktop.enable
 			};
 			extraQuickCss =
 			''
-				/*Transparent by default*/
-				*
-				{
-				background-color: #FFFFFF00 !important;
-				backdrop-filter: none !important;
-				}
 				/*Main bg*/
 				html
 				{
-					background: #${colorPalette.background}80!important;
+					background: #${colorPalette.background}90! important;
 				}
-				/*All popup menus*/
-				[role="dialog"] > * > *
+				
+				/*Popups, menus, etc.*/
+				[role="dialog"], [role="listbox"], [class*="tooltip"], [class*="Tool"], [role="menu"]
 				{
-				background: #${colorPalette.background}80!important;
-				backdrop-filter: blur(10px) !important;
+					background: #${colorPalette.background}90 !important;
+					backdrop-filter: blur(10px) !important;
 				}
-				/*Hover popups*/
-				[class*="tooltip"], [class*="Tool"], [role="menu"]
+
+				/*Replace the darker part of the discord grayscale palette*/
+				*
 				{
-				background: #FFFFFF00 !important;
-				backdrop-filter: blur(10px) !important;
-				}
-				/*Server notif icon*/
-				[aria-label="Servers"] [class*="item_"]
-				{
-				background-color: white !important;
+					${builtins.concatStringsSep "\n"
+					(
+						map (n: "--neutral-${toString n}: #00000000 !important;") (builtins.genList (i: i + 50) 51)
+					)}
 				}
 			'';
 		};
