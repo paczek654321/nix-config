@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgsOld, ... }:
+{ config, lib, pkgs, ... }:
 {
 	imports = [ ./common.nix ];
 
@@ -17,14 +17,6 @@
 	};
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
-
-	nixpkgs.overlays = 
-	[
-		(final: prev: 
-		{
-			linux-firmware = pkgsOld.linux-firmware;
-		})
-	];
 
 	my.umbriel.output =
 	{

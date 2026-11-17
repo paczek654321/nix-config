@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, pkgsOld, ... }:
+{ config, lib, inputs, pkgs, ... }:
 {
 
 options.my.steam.enable = lib.mkEnableOption "Enable Steam";
@@ -27,7 +27,7 @@ config = lib.mkIf config.my.steam.enable
 	{
 		enable = true;
 		package = pkgs.millennium-steam;
-		extraCompatPackages = [ pkgsOld.proton-ge-bin ];
+		extraCompatPackages = [ pkgs.proton-ge-bin ];
 	};
 };
 
