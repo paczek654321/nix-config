@@ -1,7 +1,6 @@
 { config, lib, ... }:
 let
 	username = config.my.user.username;
-	colorPalette = config.my.platform-theme.colorPalette;
 in
 {
 
@@ -123,30 +122,6 @@ config = lib.mkIf config.my.vesktop.enable
 					ConcatenatedComponentExtractor.enabled = true;
 				};
 			};
-			extraQuickCss =
-			''
-				/*Main bg*/
-				html
-				{
-					background: #${colorPalette.background}90! important;
-				}
-				
-				/*Popups, menus, etc.*/
-				[role="dialog"], [role="listbox"], [class*="tooltip"], [class*="Tool"], [role="menu"]
-				{
-					background: #${colorPalette.background}90 !important;
-					backdrop-filter: blur(10px) !important;
-				}
-
-				/*Replace the darker part of the discord grayscale palette*/
-				*
-				{
-					${builtins.concatStringsSep "\n"
-					(
-						map (n: "--neutral-${toString n}: #00000000 !important;") (builtins.genList (i: i + 50) 51)
-					)}
-				}
-			'';
 		};
 	};
 };
