@@ -5,10 +5,10 @@ let
 	bold = "\\[\\e[1m\\]";
 	reset = "\\[\\e[0m\\]";
 
-	color = code:
+	color = rgb:
 	{
-		text = "\\[\\e[38;5;" + code + "m\\]";
-		bg = "\\[\\e[48;5;" + code + "m\\]";
+		text = "\\[\\e[38;2;" + rgb + "m\\]";
+		bg = "\\[\\e[48;2;" + rgb + "m\\]";
 	};
 
 	plaqueText = first: { condition ? "", command, textColorCode, bgColorCode}:

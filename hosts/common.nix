@@ -130,8 +130,8 @@ in
 				}
 				{
 					command = ''pwd | sed "s/^\/home\/$(whoami)/~/"'';
-					textColorCode = "0";
-					bgColorCode = "15";
+					textColorCode = "0;0;0";
+					bgColorCode = "255;255;255";
 				}
 				{
 					condition = "git status &> /dev/null";

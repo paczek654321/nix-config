@@ -58,13 +58,10 @@
 		icon_theme_pkg = pkgs.sours-full-color;
 		colorPalette =
 		{
-			ansiiPrimary = "118";
-			ansiiSecondary = "226";
-			ansiiTertiary = "28";
-			ansiiText = "18";
-			primaryAccent = "5AD950";
-			secondaryAccent = "f5f844";
-			background = "242424";
+			ansiiPrimary = "135;175;0";
+			ansiiSecondary = "255;255;0";
+			ansiiTertiary = "0;135;0";
+			ansiiText = "0;0;135";
 		};
 	};
 	

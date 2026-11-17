@@ -46,13 +46,10 @@
 		icon_theme_pkg = pkgs.beauty-solar;
 		colorPalette =
 		{
-			ansiiPrimary = "124";
-			ansiiSecondary = "198";
-			ansiiTertiary = "220";
-			ansiiText = "15";
-			primaryAccent = "FD4663";
-			secondaryAccent = "ff33aa";
-			background = "281418";
+			ansiiPrimary = "136;0;0";
+			ansiiSecondary = "255;0;135";
+			ansiiTertiary = "255;215;0";
+			ansiiText = "255;255;255";
 		};
 	};
 

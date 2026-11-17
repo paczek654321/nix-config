@@ -17,37 +17,22 @@ options.my.platform-theme =
 				ansiiPrimary = lib.mkOption
 				{
 					type = lib.types.str;
-					description = "Primary color in the ANSII256 format";
+					description = "Primary color in the RGB ANSI format";
 				};
 				ansiiSecondary = lib.mkOption
 				{
 					type = lib.types.str;
-					description = "Secondary color in the ANSII256 format";
+					description = "Secondary color in the RGB ANSI format";
 				};
 				ansiiTertiary = lib.mkOption
 				{
 					type = lib.types.str;
-					description = "Tertiary color in the ANSII256 format";
+					description = "Tertiary color in the RGB ANSI format";
 				};
 				ansiiText = lib.mkOption
 				{
 					type = lib.types.str;
-					description = "Text color in the ANSII256 format";
-				};
-				primaryAccent = lib.mkOption
-				{
-					type = lib.types.str;
-					description = "Primary accent color in the HEX format";
-				};
-				secondaryAccent = lib.mkOption
-				{
-					type = lib.types.str;
-					description = "Secondary accent color in the HEX format";
-				};
-				background = lib.mkOption
-				{
-					type = lib.types.str;
-					description = "Background color in the HEX format";
+					description = "Text color in the RGB ANSI format";
 				};
 			};
 		};
