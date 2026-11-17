@@ -1,6 +1,5 @@
 { config, ... }:
 let
-	username = config.my.user.username;
 	monitors = builtins.attrNames config.my.umbriel.output;
 	combine = actions: "spawn umbriel msg ${builtins.concatStringsSep "; umbriel msg " actions}";
 	mkSwitchCommands = workspace: map (m: "workspace-switch ${workspace} --output ${m}") monitors;

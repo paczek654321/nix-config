@@ -1,4 +1,4 @@
-{ pkgs, pkgsOld, pkgsGit, inputs, ... }:
+{ pkgsOld, pkgsGit, inputs, ... }:
 {
 
 nixpkgs.overlays = 

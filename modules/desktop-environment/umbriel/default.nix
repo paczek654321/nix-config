@@ -1,6 +1,5 @@
 { inputs, pkgs, config, lib, ... }:
 let
-	colorPalette = config.my.platform-theme.colorPalette;
 	username = config.my.user.username;
 in
 {

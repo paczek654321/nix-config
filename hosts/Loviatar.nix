@@ -1,7 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
-let
-	colorPalette = config.my.platform-theme.colorPalette;
-in
+{ config, lib, pkgs, ... }:
 {
 	imports = [ ./common.nix ];
 

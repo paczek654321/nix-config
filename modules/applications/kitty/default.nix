@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, ...}:
 let
 	colorPalette = config.my.platform-theme.colorPalette;
 in

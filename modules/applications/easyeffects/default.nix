@@ -1,7 +1,4 @@
-{ config, lib, pkgs, ...}:
-let
-	colorPalette = config.my.platform-theme.colorPalette;
-in
+{ config, lib, ...}:
 {
 
 options.my.easyeffects.enable = lib.mkEnableOption "Enable easyeffects";

@@ -3,7 +3,6 @@ let
 	plaqueSeparator = config.my.bash.prompt.plaqueSeparator;
 
 	bold = "\\[\\e[1m\\]";
-	back = "\\[\\e[1D\\]";
 	reset = "\\[\\e[0m\\]";
 
 	color = code:

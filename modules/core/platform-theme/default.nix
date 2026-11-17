@@ -1,4 +1,4 @@
-{config, lib, pkgs, inputs, ...}:
+{config, lib, pkgs, ...}:
 let
 	username = config.my.user.username;
 	cfg = config.my.platform-theme;
