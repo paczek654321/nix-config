@@ -8,7 +8,7 @@ let
 	
 	borderColor = setColor "secondary";
 
-	template = pkgs.writeText "vesktop.css" (lib.toJSON
+	template = pkgs.writeText "fastfetch.jsonc" (lib.toJSON
 	{
 		"$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
 		logo.color = builtins.listToAttrs
