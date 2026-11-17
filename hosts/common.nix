@@ -115,18 +115,18 @@ in
 			[
 				{
 					command = "date +\"%H:%M\"";
-					textColorCode = colorPalette.ansiiText;
-					bgColorCode = colorPalette.ansiiPrimary;
+					textColorCode = "\${color_on_primary}";
+					bgColorCode = "\${color_primary}";
 				}
 				{
 					command = "whoami";
-					textColorCode = colorPalette.ansiiText;
-					bgColorCode = colorPalette.ansiiSecondary;
+					textColorCode = "\${color_on_secondary}";
+					bgColorCode = "\${color_secondary}";
 				}
 				{
 					command = "hostname";
-					textColorCode = colorPalette.ansiiText;
-					bgColorCode = colorPalette.ansiiPrimary;
+					textColorCode = "\${color_on_primary}";
+					bgColorCode = "\${color_primary}";
 				}
 				{
 					command = ''pwd | sed "s/^\/home\/$(whoami)/~/"'';
@@ -136,8 +136,8 @@ in
 				{
 					condition = "git status &> /dev/null";
 					command = ''echo "$(git branch --show-current)$([ -n "$(git status -s)" ] && echo '*')"'';
-					textColorCode = colorPalette.ansiiSecondary;
-					bgColorCode = colorPalette.ansiiTertiary;
+					textColorCode = "\${color_on_tertiary}";
+					bgColorCode = "\${color_tertiary}";
 				}
 			];
 		};
