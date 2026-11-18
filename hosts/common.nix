@@ -75,7 +75,7 @@ in
 		
 		vlc
 		xfburn
-		libreoffice-fresh
+		libreoffice
 
 		krita
 		blender

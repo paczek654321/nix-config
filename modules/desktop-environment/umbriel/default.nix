@@ -58,7 +58,7 @@ config =
 
 				input =
 				{
-					focus.follows_mouse = true;
+					focus.follows_mouse = "sloppy";
 					keyboard.layout = config.my.locale.keymap;
 				};
 
