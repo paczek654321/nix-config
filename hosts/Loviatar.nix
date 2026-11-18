@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 {
 	imports = [ ./common.nix ];
 
@@ -56,13 +56,6 @@
 	{
 		icon_theme = "Sours-Full-Color";
 		icon_theme_pkg = pkgs.sours-full-color;
-		colorPalette =
-		{
-			ansiiPrimary = "135;175;0";
-			ansiiSecondary = "255;255;0";
-			ansiiTertiary = "0;135;0";
-			ansiiText = "0;0;135";
-		};
 	};
 	
 	my.symlinks =

@@ -1,7 +1,4 @@
 { config, lib, pkgs, ... }:
-let
-	colorPalette = config.my.platform-theme.colorPalette;
-in
 {
 	system.stateVersion = "25.11";
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];

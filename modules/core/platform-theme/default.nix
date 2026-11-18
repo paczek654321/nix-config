@@ -8,36 +8,6 @@ in
 options.my.platform-theme =
 {
 	enableGUIToolkitTheming = lib.mkEnableOption "Enable system theming";
-	colorPalette = lib.mkOption
-	{
-		type = lib.types.submodule
-		{
-			options =
-			{
-				ansiiPrimary = lib.mkOption
-				{
-					type = lib.types.str;
-					description = "Primary color in the RGB ANSI format";
-				};
-				ansiiSecondary = lib.mkOption
-				{
-					type = lib.types.str;
-					description = "Secondary color in the RGB ANSI format";
-				};
-				ansiiTertiary = lib.mkOption
-				{
-					type = lib.types.str;
-					description = "Tertiary color in the RGB ANSI format";
-				};
-				ansiiText = lib.mkOption
-				{
-					type = lib.types.str;
-					description = "Text color in the RGB ANSI format";
-				};
-			};
-		};
-		description = "System color palette";
-	};
 	font_size = lib.mkOption
 	{
 		type = lib.types.int;

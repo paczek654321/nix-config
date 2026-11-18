@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 {
 	imports = [ ./common.nix ];
 
@@ -36,13 +36,6 @@
 	{
 		icon_theme = "BeautySolar";
 		icon_theme_pkg = pkgs.beauty-solar;
-		colorPalette =
-		{
-			ansiiPrimary = "136;0;0";
-			ansiiSecondary = "255;0;135";
-			ansiiTertiary = "255;215;0";
-			ansiiText = "255;255;255";
-		};
 	};
 
 	my.symlinks =
