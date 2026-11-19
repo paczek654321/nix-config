@@ -82,12 +82,17 @@ config =
 					"Mod+Grave" = "submap ignore";
 
 					"Mod+Q" = "window-close";
-					"Mod+V" = "window-toggle-floating";
-					"Mod+MouseMiddle" = "layout-toggle-split";
+					"Mod+Shift+Q" = "window-kill";
+					"Mod+X" = "window-toggle-floating";
+					"Mod+C" = "layout-toggle-split";
 					"Mod+Left" = "window-focus-or-output-left";
 					"Mod+Right" = "window-focus-or-output-right";
 					"Mod+Up" = "window-focus-or-output-up";
 					"Mod+Down" = "window-focus-or-output-down";
+					"Mod+Shift+Left" = "window-move-or-output-left";
+					"Mod+Shift+Right" = "window-move-or-output-right";
+					"Mod+Shift+Up" = "window-move-or-output-up";
+					"Mod+Shift+Down" = "window-move-or-output-down";
 				};
 
 				effects =
