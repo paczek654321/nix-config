@@ -1,19 +1,10 @@
-{ pkgsOld, pkgsGit, inputs, ... }:
+{ pkgsGit, inputs, ... }:
 {
 
 nixpkgs.overlays = 
 [
 	(final: prev: 
 	{
-		krita = pkgsOld.krita.overrideAttrs (old:
-		{
-			buildCommand = (old.buildCommand or "") +
-			''
-				wrapProgram "$out/bin/krita" \
-					--set QT_XCB_GL_INTEGRATION none
-			'';
-		});
-		
 		qt6Packages = prev.qt6Packages //
 		{
 			qt6ct = inputs.ilya-fedin.packages.${prev.stdenv.hostPlatform.system}.qt6ct;
