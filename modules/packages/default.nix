@@ -5,7 +5,14 @@ nixpkgs.overlays =
 [
 	(final: prev: 
 	{
-		krita = pkgsOld.krita;
+		krita = pkgsOld.krita.overrideAttrs (old:
+		{
+			buildCommand = (old.buildCommand or "") +
+			''
+				wrapProgram "$out/bin/krita" \
+					--set QT_XCB_GL_INTEGRATION none
+			'';
+		});
 		
 		qt6Packages = prev.qt6Packages //
 		{
