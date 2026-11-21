@@ -68,7 +68,7 @@
 		kdePackages.isoimagewriter
 		kdePackages.filelight
 
-		grayjay-18
+		grayjay
 		
 		vlc
 		xfburn

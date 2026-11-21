@@ -76,7 +76,6 @@ nixpkgs.overlays =
 			'';
 		};
 
-		grayjay-18 = final.callPackage ./_grayjay-18 {};
 		cool-dark-icons = final.callPackage ./_cool-dark-icons.nix {};
 		sours-full-color = final.callPackage ./_sours-full-color.nix {};
 		beauty-solar = final.callPackage ./_beauty-solar.nix {};
