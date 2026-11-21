@@ -5,7 +5,6 @@ description = "Nixos config flake";
 inputs =
 {
 	nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-	nixpkgs-old.url = "github:NixOS/nixpkgs/78173555c5d16bee8ab97ce9ef1d257d5657b442";
 	nixpkgs-git.url = "github:nixos/nixpkgs/master";
 
 	import-tree.url = "github:denful/import-tree";
@@ -62,17 +61,12 @@ nixConfig =
 outputs = { self, nixpkgs, ... }@inputs:
 let
 	system = "x86_64-linux";
-	pkgsOld = import inputs.nixpkgs-old
-	{
-		inherit system;
-		config.allowUnfree = true;
-  	};
 	pkgsGit = import inputs.nixpkgs-git
 	{
 		inherit system;
 		config.allowUnfree = true;
   	};
-	specialArgs = { inherit self inputs pkgsOld pkgsGit; };
+	specialArgs = { inherit self inputs pkgsGit; };
 in
 {
 	nixosConfigurations.Hephaestus = nixpkgs.lib.nixosSystem

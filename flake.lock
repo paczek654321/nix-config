@@ -161,22 +161,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-old": {
-      "locked": {
-        "lastModified": 1773125890,
-        "narHash": "sha256-Kob9356sCwqTPjNDmcsS2IymE1EFEhll/+RKXcMrZz4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "78173555c5d16bee8ab97ce9ef1d257d5657b442",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "78173555c5d16bee8ab97ce9ef1d257d5657b442",
-        "type": "github"
-      }
-    },
     "noctalia": {
       "inputs": {
         "nixpkgs": [
@@ -205,7 +189,6 @@
         "millennium": "millennium",
         "nixpkgs": "nixpkgs",
         "nixpkgs-git": "nixpkgs-git",
-        "nixpkgs-old": "nixpkgs-old",
         "noctalia": "noctalia",
         "umbriel": "umbriel",
         "umbriel-accent-gradient": "umbriel-accent-gradient",
