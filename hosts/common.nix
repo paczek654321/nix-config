@@ -191,6 +191,7 @@
 	my.steam.enable = true;
 	my.syncthing.enable = true;
 	my.hyprpicker.enable = true;
+	my.fcitx5-mandarin.enable = true;
 	
 
 	my.platform-theme = lib.mkDefault
