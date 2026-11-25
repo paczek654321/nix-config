@@ -68,6 +68,8 @@
 		kdePackages.isoimagewriter
 		kdePackages.filelight
 
+		anki
+
 		grayjay
 		
 		vlc
