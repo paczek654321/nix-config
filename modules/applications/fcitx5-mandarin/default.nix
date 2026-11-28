@@ -26,28 +26,33 @@ config = lib.mkIf config.my.fcitx5-mandarin.enable
 					qt6Packages.fcitx5-chinese-addons
 				];
 
-				settings.addons =
+				settings =
 				{
-					pinyin.globalSection =
-					{
-						CloudPinyinEnabled = false;
-						FirstRun = false;
-					};
-				};
+					globalOptions."Hotkey/EnumerateGroupForwardKeys" = { "#0" = "Super+space"; };
 
-				settings.inputMethod =
-				{
-					GroupOrder."0" = "Default";
-
-					"Groups/0" =
+					addons =
 					{
-						Name = "Default";
-						"Default Layout" = keymap;
-						DefaultIM = "keyboard-${keymap}";
+						pinyin.globalSection =
+						{
+							CloudPinyinEnabled = false;
+							FirstRun = false;
+						};
 					};
 
-					"Groups/0/Items/0".Name = "keyboard-${keymap}";
-					"Groups/0/Items/1".Name = "pinyin";
+					inputMethod =
+					{
+						GroupOrder."0" = "Default";
+
+						"Groups/0" =
+						{
+							Name = "Default";
+							"Default Layout" = keymap;
+							DefaultIM = "keyboard-${keymap}";
+						};
+
+						"Groups/0/Items/0".Name = "keyboard-${keymap}";
+						"Groups/0/Items/1".Name = "pinyin";
+					};
 				};
 			};
 		};
