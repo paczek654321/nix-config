@@ -22,12 +22,12 @@
 	{
 		"DP-1" =
 		{
-			mode = "2560x1440@165.080";
+			mode = "highest_refresh";
 		};
 
 		"DP-2" =
 		{
-			mode = "2560x1440@165.080";
+			mode = "highest_refresh";
 			position = [0 0];
 		};
 	};
